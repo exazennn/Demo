@@ -1,49 +1,42 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goodwin Dental Practice | Quality Dental Care in Cockermouth, Cumbria</title>
-    <meta name="description" content="Goodwin Dental Practice provides professional dental care in Cockermouth, Cumbria. Led by Principal Dentist Deborah Goodwin. Call 01900 823467 to book an appointment.">
-
-    <!-- Google Fonts -->
+    <title>Goodwin & Associates | Premium Dental Practice in Cockermouth</title>
+    <meta name="description" content="Goodwin & Associates – Award-winning dental practice in Cockermouth. General, cosmetic & implant dentistry. Rated 4.9/5 by 316+ patients. Book your consultation today.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        /* ============================================
-                   CSS VARIABLES & RESET
-                   ============================================ */
         :root {
-            --primary: #0c8b8b;
-            --primary-dark: #0a6e6e;
-            --primary-light: #e6f4f4;
-            --primary-lighter: #f0f9f9;
-            --accent: #d4923a;
-            --accent-dark: #b87a2e;
-            --accent-light: #fdf6ee;
-            --text-dark: #1e293b;
-            --text-medium: #475569;
-            --text-light: #64748b;
-            --white: #ffffff;
-            --bg-light: #f8fafc;
-            --bg-section: #f1f5f9;
-            --border: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+            --color-primary: #0d9488;
+            --color-primary-dark: #0f766e;
+            --color-primary-light: #14b8a6;
+            --color-navy: #0f1e2e;
+            --color-navy-light: #1a2d42;
+            --color-gold: #d4a843;
+            --color-gold-light: #e8c76a;
+            --color-bg: #ffffff;
+            --color-bg-alt: #f8fafc;
+            --color-text: #1e293b;
+            --color-text-light: #64748b;
+            --color-white: #ffffff;
+            --color-black: #000000;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.14);
+            --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.18);
             --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-xl: 28px;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --font-heading: 'Poppins', sans-serif;
-            --font-body: 'Inter', sans-serif;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-med: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --max-width: 1200px;
             --nav-height: 72px;
         }
 
@@ -57,42 +50,23 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: var(--nav-height);
+            font-size: 16px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
         body {
             font-family: var(--font-body);
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background-color: var(--white);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
             overflow-x: hidden;
-            animation: bodyFadeIn 0.8s ease-out;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            line-height: 1.3;
-            color: var(--text-dark);
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul,
-        ol {
-            list-style: none;
+        body.loaded {
+            opacity: 1;
         }
 
         img {
@@ -100,747 +74,695 @@
             height: auto;
             display: block;
         }
-
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
         button {
             cursor: pointer;
-            font-family: inherit;
+            font-family: var(--font-body);
             border: none;
             background: none;
-            transition: var(--transition);
+            transition: var(--transition-med);
         }
-
         input,
-        textarea,
-        select {
-            font-family: inherit;
-            font-size: inherit;
+        select,
+        textarea {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: var(--max-width);
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* ============================================
-                   SECTION HEADER STYLES
-                   ============================================ */
-        .section-header {
-            text-align: center;
-            max-width: 720px;
-            margin: 0 auto 56px;
-        }
-
-        .section-header .section-tag {
-            display: inline-block;
-            font-family: var(--font-heading);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--primary);
-            background: var(--primary-light);
-            padding: 6px 16px;
-            border-radius: 50px;
-            margin-bottom: 16px;
-            transition: var(--transition);
-            animation: fadeInTag 0.6s ease-out;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: var(--text-medium);
-            line-height: 1.8;
-            animation: fadeInUp 0.8s ease-out 0.15s;
-            animation-fill-mode: both;
-        }
-
-        @media (max-width: 768px) {
-            .section-header h2 {
-                font-size: 1.9rem;
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
             }
-            .section-header {
-                margin-bottom: 40px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-
-        /* ============================================
-                   BUTTONS
-                   ============================================ */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-family: var(--font-heading);
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 14px 28px;
-            border-radius: 50px;
-            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            letter-spacing: 0.3px;
-            white-space: nowrap;
-            position: relative;
-            overflow: hidden;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+        @keyframes pulseGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(13, 148, 136, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(13, 148, 136, 0.7);
+            }
+        }
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
         }
 
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.5s ease, height 0.5s ease;
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+        .delay-1 {
+            animation-delay: 0.15s;
+        }
+        .delay-2 {
+            animation-delay: 0.3s;
+        }
+        .delay-3 {
+            animation-delay: 0.45s;
+        }
+        .delay-4 {
+            animation-delay: 0.6s;
+        }
+        .delay-5 {
+            animation-delay: 0.75s;
         }
 
-        .btn:active::after {
-            width: 300px;
-            height: 300px;
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-animate.delay-scroll-1 {
+            transition-delay: 0.1s;
+        }
+        .scroll-animate.delay-scroll-2 {
+            transition-delay: 0.2s;
+        }
+        .scroll-animate.delay-scroll-3 {
+            transition-delay: 0.3s;
+        }
+        .scroll-animate.delay-scroll-4 {
+            transition-delay: 0.4s;
         }
 
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-            box-shadow: 0 4px 16px rgba(12, 139, 139, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            box-shadow: 0 6px 24px rgba(12, 139, 139, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-accent {
-            background: var(--accent);
-            color: var(--white);
-            box-shadow: 0 4px 16px rgba(212, 146, 58, 0.3);
-        }
-
-        .btn-accent:hover {
-            background: var(--accent-dark);
-            box-shadow: 0 6px 24px rgba(212, 146, 58, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid rgba(255, 255, 255, 0.6);
-        }
-
-        .btn-outline:hover {
-            background: var(--white);
-            color: var(--primary-dark);
-            border-color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline-dark {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline-dark:hover {
-            background: var(--primary);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        .btn-sm {
-            padding: 10px 20px;
-            font-size: 0.85rem;
-        }
-
-        .btn-lg {
-            padding: 16px 36px;
-            font-size: 1.05rem;
-        }
-
-        /* ============================================
-                   NAVIGATION
-                   ============================================ */
+        /* ============ NAVIGATION ============ */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            transition: background 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+            background: transparent;
+            padding: 0 24px;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-            height: var(--nav-height);
-            transition: var(--transition);
-            animation: navSlideDown 0.6s ease-out;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
-
-        .navbar.scrolled {
-            box-shadow: var(--shadow-sm);
-            background: rgba(255, 255, 255, 0.98);
-        }
-
-        .nav-container {
+        .navbar .container-nav {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
         }
-
-        .nav-logo {
+        .navbar .logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-family: var(--font-heading);
             font-weight: 700;
             font-size: 1.3rem;
-            color: var(--primary-dark);
+            color: var(--color-white);
+            transition: color 0.4s ease;
+            letter-spacing: -0.02em;
             text-decoration: none;
-            letter-spacing: -0.5px;
+            z-index: 1001;
         }
-
-        .nav-logo .logo-icon {
+        .navbar.scrolled .logo {
+            color: var(--color-navy);
+        }
+        .logo-icon {
             width: 40px;
             height: 40px;
-            background: var(--primary);
             border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            color: #fff;
             flex-shrink: 0;
-            transition: transform 0.4s ease;
+            font-weight: 800;
+            letter-spacing: 0;
         }
-
-        .nav-logo:hover .logo-icon {
-            transform: rotate(360deg);
+        .navbar.scrolled .logo-icon {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: #fff;
         }
-
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            list-style: none;
         }
-
         .nav-links a {
-            font-size: 0.9rem;
+            color: var(--color-white);
             font-weight: 500;
-            color: var(--text-medium);
-            padding: 8px 14px;
-            border-radius: 6px;
-            transition: var(--transition);
-            letter-spacing: 0.2px;
+            font-size: 0.9rem;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: var(--transition-fast);
+            letter-spacing: 0.01em;
             position: relative;
         }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 60%;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
-            background: var(--primary-light);
-        }
-
-        .nav-cta {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-book-btn {
-            background: var(--primary);
-            color: var(--white);
-            padding: 10px 22px;
-            border-radius: 50px;
-            font-family: var(--font-heading);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-            transition: var(--transition);
-            box-shadow: 0 2px 8px rgba(12, 139, 139, 0.25);
-        }
-
-        .nav-book-btn:hover {
-            background: var(--primary-dark);
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.15);
             transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(12, 139, 139, 0.35);
+        }
+        .navbar.scrolled .nav-links a {
+            color: var(--color-navy);
+        }
+        .navbar.scrolled .nav-links a:hover {
+            background: rgba(13, 148, 136, 0.1);
+            color: var(--color-primary);
+        }
+        .nav-links a.active-link {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        .navbar.scrolled .nav-links a.active-link {
+            background: rgba(13, 148, 136, 0.15);
+            color: var(--color-primary);
         }
 
+        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
             padding: 8px;
             border-radius: 8px;
+            z-index: 1001;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            background: transparent;
+            border: none;
         }
-
         .hamburger span {
             display: block;
-            width: 24px;
+            width: 26px;
             height: 2.5px;
-            background: var(--text-dark);
-            border-radius: 2px;
-            transition: var(--transition);
+            background: var(--color-white);
+            border-radius: 4px;
+            transition: var(--transition-med);
+            transform-origin: center;
         }
-
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(7.5px) rotate(45deg);
+        .navbar.scrolled .hamburger span {
+            background: var(--color-navy);
         }
-
-        .hamburger.active span:nth-child(2) {
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            background: var(--color-navy);
+        }
+        .hamburger.open span:nth-child(2) {
             opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+            background: var(--color-navy);
         }
 
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-7.5px) rotate(-45deg);
+        /* Mobile Tray */
+        .mobile-tray {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            max-width: 380px;
+            background: #ffffff;
+            z-index: 999;
+            transform: translateX(100%);
+            transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+            padding: 80px 32px 32px;
+            box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
+            overflow-y: auto;
+        }
+        .mobile-tray.open {
+            transform: translateX(0);
+        }
+        .mobile-tray .tray-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .mobile-tray .tray-links a {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--color-navy);
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(15, 30, 46, 0.08);
+            letter-spacing: -0.01em;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .mobile-tray .tray-links a:hover {
+            color: var(--color-primary);
+            padding-left: 8px;
+        }
+        .mobile-tray .tray-links a::after {
+            content: '→';
+            opacity: 0;
+            transition: var(--transition-fast);
+            color: var(--color-primary);
+        }
+        .mobile-tray .tray-links a:hover::after {
+            opacity: 1;
+        }
+        .mobile-tray .tray-footer {
+            margin-top: auto;
+            padding-top: 24px;
+            border-top: 1px solid rgba(15, 30, 46, 0.1);
+        }
+        .mobile-tray .tray-footer p {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            margin-bottom: 6px;
+        }
+        .mobile-tray .tray-footer .phone-link {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        .tray-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .tray-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
         }
 
-        @media (max-width: 992px) {
-            .nav-links {
-                position: fixed;
-                top: var(--nav-height);
-                left: 0;
-                right: 0;
-                background: var(--white);
-                flex-direction: column;
-                padding: 24px;
-                gap: 4px;
-                box-shadow: var(--shadow-lg);
-                border-bottom: 1px solid var(--border);
-                transform: translateY(-120%);
-                opacity: 0;
-                pointer-events: none;
-                transition: var(--transition);
-                max-height: calc(100vh - var(--nav-height));
-                overflow-y: auto;
-            }
-
-            .nav-links.open {
-                transform: translateY(0);
-                opacity: 1;
-                pointer-events: auto;
-            }
-
-            .nav-links a {
-                padding: 14px 18px;
-                font-size: 1rem;
-                border-radius: 8px;
-            }
-
-            .nav-cta .nav-book-btn {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .nav-logo {
-                font-size: 1.05rem;
-            }
-            .nav-logo .logo-icon {
-                width: 34px;
-                height: 34px;
-                font-size: 0.95rem;
-            }
-        }
-
-        /* ============================================
-                   HERO SECTION
-                   ============================================ */
+        /* ============ HERO SECTION ============ */
         .hero {
+            position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            position: relative;
-            background: linear-gradient(135deg, #0a3d3d 0%, #0c5c5c 35%, #0c8b8b 70%, #0e9e9e 100%);
+            padding: var(--nav-height) 0 60px;
+            background: linear-gradient(135deg, #0f1e2e 0%, #0a1628 30%, #0d3b3a 65%, #0f4c4a 100%);
             overflow: hidden;
-            padding: calc(var(--nav-height) + 40px) 0 80px;
-            animation: heroBgIn 1.2s ease-out;
         }
-
         .hero::before {
             content: '';
             position: absolute;
-            top: -30%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.04);
-            pointer-events: none;
-            animation: floatBlob 15s infinite alternate ease-in-out;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&q=80') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: 0;
         }
-
         .hero::after {
             content: '';
             position: absolute;
-            bottom: -20%;
-            left: -5%;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.03);
-            pointer-events: none;
-            animation: floatBlob 18s infinite alternate-reverse ease-in-out;
-        }
-
-        .hero-bg-pattern {
-            position: absolute;
             inset: 0;
-            opacity: 0.08;
-            background-image:
-                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-            pointer-events: none;
-            animation: patternDrift 30s infinite linear;
+            background: linear-gradient(135deg, rgba(15, 30, 46, 0.85) 0%, rgba(10, 22, 40, 0.75) 30%, rgba(13, 59, 58, 0.7) 65%, rgba(15, 76, 74, 0.65) 100%);
+            z-index: 1;
         }
-
-        .hero-content {
+        .hero .container {
             position: relative;
             z-index: 2;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 48px;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
         }
-
-        .hero-text {
-            color: var(--white);
+        .hero-content {
+            color: #fff;
         }
-
-        .hero-badge {
+        .hero-pre-headline {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 8px 18px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 8px 16px;
             border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            margin-bottom: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            animation: fadeInDown 0.8s ease-out both 0.2s;
-        }
-
-        .hero-badge i {
-            color: var(--accent);
-        }
-
-        .hero-text h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: var(--white);
-            line-height: 1.15;
-            letter-spacing: -1px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #a7f3d0;
             margin-bottom: 20px;
-            animation: fadeInUp 0.9s ease-out both 0.35s;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
-
-        .hero-text h1 span {
-            color: #f5d7a8;
-            position: relative;
-            display: inline-block;
-            animation: shimmer 3s infinite;
+        .hero-pre-headline .star {
+            color: var(--color-gold-light);
         }
-
-        .hero-text .hero-subtitle {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.8;
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+            line-height: 1.15;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-gold-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .hero-subheadline {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
             margin-bottom: 32px;
             max-width: 520px;
-            animation: fadeInUp 0.9s ease-out both 0.5s;
         }
-
         .hero-buttons {
             display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-bottom: 36px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+            transition: var(--transition-med);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: inherit;
+        }
+        .btn:hover::after {
+            opacity: 1;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(13, 148, 136, 0.35);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(13, 148, 136, 0.5);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.7);
+            transform: translateY(-3px);
+        }
+        .btn-gold {
+            background: linear-gradient(135deg, var(--color-gold), #b8912e);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(212, 168, 67, 0.35);
+        }
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(212, 168, 67, 0.5);
+        }
+        .hero-social-proof {
+            display: flex;
+            align-items: center;
             gap: 16px;
             flex-wrap: wrap;
-            animation: fadeInUp 0.9s ease-out both 0.65s;
         }
-
-        .hero-image {
-            position: relative;
+        .hero-rating {
             display: flex;
             align-items: center;
-            justify-content: center;
-            animation: fadeInScale 1s ease-out both 0.5s;
+            gap: 8px;
         }
-
-        .hero-image-placeholder {
-            width: 100%;
-            max-width: 480px;
-            aspect-ratio: 4/3;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            overflow: hidden;
-            animation: floatY 6s ease-in-out infinite;
+        .hero-rating .stars {
+            color: var(--color-gold-light);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
         }
-
-        .hero-image-placeholder i {
-            font-size: 8rem;
-            color: rgba(255, 255, 255, 0.5);
-            animation: pulseIcon 3s ease-in-out infinite;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 48px;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out both 0.8s;
-        }
-
-        .hero-stat {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hero-stat .stat-number {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--white);
-            letter-spacing: -0.5px;
-        }
-
-        .hero-stat .stat-label {
+        .hero-rating .rating-text {
             font-size: 0.85rem;
             color: rgba(255, 255, 255, 0.7);
-            letter-spacing: 0.5px;
         }
-
-        @media (max-width: 992px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero-stats {
-                justify-content: center;
-            }
-            .hero-image-placeholder {
-                max-width: 100%;
-            }
-            .hero-image-placeholder i {
-                font-size: 5rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-text h1 {
-                font-size: 1.9rem;
-            }
-            .hero-text .hero-subtitle {
-                font-size: 1rem;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .hero-stats {
-                gap: 24px;
-            }
-            .hero-stat .stat-number {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* ============================================
-                   ABOUT SECTION
-                   ============================================ */
-        .about {
-            padding: 100px 0;
-            background: var(--white);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+        .hero-avatars {
+            display: flex;
             align-items: center;
         }
-
-        .about-image {
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            aspect-ratio: 4/3;
-            background: var(--primary-light);
+        .hero-avatars .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            margin-left: -8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-navy));
+        }
+        .hero-avatars .avatar:first-child {
+            margin-left: 0;
+        }
+        .hero-avatars .avatar-count {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-left: 8px;
         }
 
-        .about-image:hover {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .about-image i {
-            font-size: 6rem;
-            color: var(--primary);
-            opacity: 0.5;
-            transition: transform 0.5s ease;
-        }
-
-        .about-image:hover i {
-            transform: scale(1.1);
-        }
-
-        .about-text .section-tag {
-            display: inline-block;
-            font-family: var(--font-heading);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--primary);
-            background: var(--primary-light);
-            padding: 6px 16px;
-            border-radius: 50px;
-            margin-bottom: 16px;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .about-text p {
-            color: var(--text-medium);
-            font-size: 1.05rem;
-            line-height: 1.85;
-            margin-bottom: 20px;
-        }
-
-        .about-text .about-highlight {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 16px 20px;
-            background: var(--primary-lighter);
-            border-radius: var(--radius-md);
-            border-left: 4px solid var(--primary);
-            margin-top: 24px;
-            transition: transform 0.3s ease;
-        }
-
-        .about-text .about-highlight:hover {
-            transform: translateX(8px);
-        }
-
-        .about-text .about-highlight i {
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-top: 4px;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-
-        .about-text .about-highlight:hover i {
-            transform: scale(1.3);
-        }
-
-        .about-text .about-highlight p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
-            color: var(--text-dark);
-        }
-
-        @media (max-width: 992px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .about-text h2 {
-                font-size: 2rem;
-            }
-        }
-
-        /* ============================================
-                   SERVICES SECTION
-                   ============================================ */
-        .services {
-            padding: 100px 0;
-            background: var(--bg-section);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 24px;
-        }
-
-        .service-card {
-            background: var(--white);
+        /* Hero Form */
+        .hero-form-wrapper {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: var(--radius-lg);
-            padding: 32px 24px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
+            padding: 32px 28px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+            transition: var(--transition-med);
+        }
+        .hero-form-wrapper:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+        }
+        .hero-form-wrapper h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
+            letter-spacing: -0.01em;
+        }
+        .hero-form-wrapper .form-subtitle {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 14px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 4px;
+            letter-spacing: 0.02em;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--color-primary-light);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.2);
+        }
+        .form-group select {
+            color: #fff;
+            cursor: pointer;
+        }
+        .form-group select option {
+            color: var(--color-text);
+            background: #fff;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .form-submit-btn {
+            width: 100%;
+            padding: 14px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+            border: none;
+            transition: var(--transition-med);
+            margin-top: 4px;
             position: relative;
             overflow: hidden;
         }
+        .form-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(13, 148, 136, 0.45);
+        }
+        .form-submit-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+        }
 
+        /* ============ SECTION COMMON ============ */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        .section-bg-alt {
+            background: var(--color-bg-alt);
+        }
+        .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 60px;
+        }
+        .section-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--color-navy);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        /* ============ SERVICES SECTION ============ */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .service-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 36px 28px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-med);
+            border: 1px solid rgba(15, 30, 46, 0.05);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
         .service-card::before {
             content: '';
             position: absolute;
@@ -848,1661 +770,1330 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.5s ease;
-            z-index: 1;
-        }
-
-        .service-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(12,139,139,0.05) 0%, transparent 100%);
-            pointer-events: none;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-gold));
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-
         .service-card:hover {
             box-shadow: var(--shadow-lg);
             transform: translateY(-6px);
-            border-color: var(--primary);
+            border-color: rgba(13, 148, 136, 0.15);
         }
-
         .service-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .service-card:hover::after {
             opacity: 1;
         }
-
         .service-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--primary-light);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            transition: all 0.4s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-card:hover .service-icon {
-            background: var(--primary);
-            color: var(--white);
-            transform: rotateY(180deg);
-        }
-
-        .service-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -0.3px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-card p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            flex-grow: 1;
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-link {
-            font-family: var(--font-heading);
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--primary);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: var(--transition);
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-link i {
-            font-size: 0.75rem;
-            transition: var(--transition);
-        }
-
-        .service-link:hover {
-            color: var(--primary-dark);
-            gap: 12px;
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-                gap: 16px;
-            }
-            .service-card {
-                padding: 24px 18px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ============================================
-                   WHY CHOOSE US SECTION
-                   ============================================ */
-        .why-choose {
-            padding: 100px 0;
-            background: var(--white);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 24px;
-        }
-
-        .feature-card {
-            padding: 32px 24px;
-            background: var(--bg-light);
-            border-radius: var(--radius-lg);
-            text-align: center;
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(12,139,139,0.05) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            pointer-events: none;
-        }
-
-        .feature-card:hover {
-            border-color: var(--primary);
-            background: var(--primary-lighter);
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-
-        .feature-icon {
             width: 64px;
             height: 64px;
-            background: var(--white);
-            border-radius: 50%;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(13, 148, 136, 0.05));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            color: var(--primary);
+            font-size: 1.8rem;
             margin: 0 auto 20px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.5s ease;
+            transition: var(--transition-med);
         }
-
-        .feature-card:hover .feature-icon {
-            background: var(--primary);
-            color: var(--white);
-            box-shadow: 0 4px 16px rgba(12, 139, 139, 0.3);
-            transform: rotate(360deg);
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: #fff;
+            transform: scale(1.05);
         }
-
-        .feature-card h3 {
-            font-size: 1.1rem;
+        .service-card h3 {
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -0.3px;
+            color: var(--color-navy);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
         }
-
-        .feature-card p {
-            font-size: 0.9rem;
-            color: var(--text-medium);
+        .service-card p {
+            font-size: 0.92rem;
+            color: var(--color-text-light);
             line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .service-card .btn-link {
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: var(--transition-fast);
+        }
+        .service-card .btn-link:hover {
+            gap: 10px;
+            color: var(--color-primary-dark);
         }
 
-        /* ============================================
-                   TEAM PREVIEW SECTION
-                   ============================================ */
-        .team-preview {
-            padding: 100px 0;
-            background: var(--bg-section);
+        /* ============ WHY US SECTION ============ */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
         }
-
-        .team-card {
-            max-width: 500px;
-            margin: 0 auto;
-            background: var(--white);
+        .why-us-image {
             border-radius: var(--radius-xl);
             overflow: hidden;
             box-shadow: var(--shadow-lg);
-            text-align: center;
-            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid var(--border);
+            position: relative;
         }
-
-        .team-card:hover {
-            box-shadow: var(--shadow-xl);
-            transform: translateY(-8px) scale(1.01);
+        .why-us-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
         }
-
-        .team-image {
-            width: 140px;
-            height: 140px;
+        .why-us-image:hover img {
+            transform: scale(1.03);
+        }
+        .why-us-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.1), rgba(15, 30, 46, 0.15));
+            pointer-events: none;
+        }
+        .why-us-content h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+            font-weight: 700;
+            color: var(--color-navy);
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+        }
+        .why-us-content>p {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+        .differentiators {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .differentiators li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 0.95rem;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+        .differentiators .check-icon {
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
-            background: var(--primary-light);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 32px auto 20px;
-            font-size: 3.5rem;
-            color: var(--primary);
-            border: 4px solid var(--white);
-            box-shadow: 0 0 0 4px var(--primary-light);
-            transition: all 0.5s ease;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
 
-        .team-card:hover .team-image {
-            transform: scale(1.1);
-            box-shadow: 0 0 0 8px var(--primary-light);
-            background: var(--primary);
-            color: var(--white);
+        /* ============ PORTFOLIO / OUR WORK ============ */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
-
-        .team-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 4px;
+        .portfolio-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-med);
+            cursor: pointer;
+            background: #e2e8f0;
         }
-
-        .team-card .team-role {
-            font-family: var(--font-heading);
-            font-size: 0.9rem;
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.06);
+        }
+        .portfolio-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 30, 46, 0.85) 0%, rgba(15, 30, 46, 0.2) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        .portfolio-item:hover .overlay {
+            opacity: 1;
+        }
+        .portfolio-item .overlay span {
+            color: #fff;
             font-weight: 600;
-            color: var(--primary);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+        .portfolio-item:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .portfolio-cta {
+            text-align: center;
+            margin-top: 40px;
         }
 
-        .team-card .team-bio {
+        /* ============ REVIEWS SECTION ============ */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .review-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 28px 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(15, 30, 46, 0.05);
+            transition: var(--transition-med);
+        }
+        .review-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+        .review-stars {
+            color: var(--color-gold);
             font-size: 0.95rem;
-            color: var(--text-medium);
-            padding: 0 32px;
-            margin-bottom: 24px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .review-text {
+            font-size: 0.92rem;
+            color: var(--color-text);
             line-height: 1.7;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .review-author .avatar-sm {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-navy));
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+        .review-author .name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-navy);
+        }
+        .review-author .date {
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+        }
+        .reviews-overall {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .reviews-overall .big-rating {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--color-navy);
+            line-height: 1;
+        }
+        .reviews-overall .big-stars {
+            color: var(--color-gold);
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+        }
+        .reviews-overall .count {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
         }
 
-        .team-card .btn {
-            margin-bottom: 32px;
-        }
-
-        /* ============================================
-                   CONTACT SECTION
-                   ============================================ */
-        .contact {
-            padding: 100px 0;
-            background: var(--white);
-        }
-
+        /* ============ CONTACT SECTION ============ */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 48px;
             align-items: start;
         }
-
-        .contact-info .section-tag {
-            display: inline-block;
-            font-family: var(--font-heading);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--primary);
-            background: var(--primary-light);
-            padding: 6px 16px;
-            border-radius: 50px;
-            margin-bottom: 16px;
-        }
-
         .contact-info h2 {
-            font-size: 2.2rem;
-            font-weight: 800;
+            font-family: var(--font-heading);
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            font-weight: 700;
+            color: var(--color-navy);
             margin-bottom: 16px;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
         }
-
         .contact-info>p {
-            color: var(--text-medium);
-            font-size: 1.05rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            color: var(--color-text-light);
+            line-height: 1.75;
             margin-bottom: 32px;
         }
-
         .contact-details {
+            list-style: none;
             display: flex;
             flex-direction: column;
             gap: 20px;
-            margin-bottom: 32px;
         }
-
-        .contact-item {
+        .contact-details li {
             display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            padding: 16px 20px;
-            background: var(--bg-light);
-            border-radius: var(--radius-md);
-            transition: all 0.4s ease;
-            border: 1px solid transparent;
-            animation: fadeInUp 0.6s ease-out;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.95rem;
+            color: var(--color-text);
         }
-
-        .contact-item:hover {
-            border-color: var(--primary);
-            background: var(--primary-lighter);
-            transform: translateX(6px);
-        }
-
-        .contact-item .contact-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            border-radius: 50%;
+        .contact-details .icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(13, 148, 136, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
         }
-
-        .contact-item:hover .contact-icon {
-            transform: scale(1.15);
-        }
-
-        .contact-item .contact-text h4 {
-            font-size: 0.9rem;
+        .contact-details a {
+            color: var(--color-primary);
             font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 2px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
         }
 
-        .contact-item .contact-text p,
-        .contact-item .contact-text a {
-            font-size: 1rem;
-            color: var(--text-dark);
-            font-weight: 500;
-            line-height: 1.5;
-        }
-
-        .contact-item .contact-text a:hover {
-            color: var(--primary);
-        }
-
-        .map-container {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border);
-            aspect-ratio: 1 / 1;
-            min-height: 400px;
-            transition: box-shadow 0.5s ease;
-        }
-
-        .map-container:hover {
-            box-shadow: var(--shadow-xl);
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-
-        /* Contact Form */
-        .contact-form-wrapper {
-            background: var(--bg-light);
-            border-radius: var(--radius-lg);
-            padding: 40px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-            transition: box-shadow 0.5s ease, transform 0.5s ease;
-        }
-
-        .contact-form-wrapper:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-        }
-
-        .contact-form-wrapper h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.3px;
-        }
-
-        .contact-form-wrapper>p {
-            font-size: 0.95rem;
-            color: var(--text-medium);
-            margin-bottom: 28px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 6px;
-            letter-spacing: 0.3px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 18px;
-            border: 2px solid var(--border);
-            border-radius: var(--radius-sm);
-            font-size: 0.95rem;
-            color: var(--text-dark);
-            background: var(--white);
-            transition: all 0.3s ease;
-            outline: none;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(12, 139, 139, 0.1);
-            transform: translateY(-1px);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #a0aec0;
-        }
-
-        .form-submit-btn {
-            width: 100%;
-            padding: 16px;
-            background: var(--primary);
-            color: var(--white);
-            font-family: var(--font-heading);
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: var(--radius-sm);
-            letter-spacing: 0.5px;
-            transition: all 0.35s ease;
-            box-shadow: 0 4px 12px rgba(12, 139, 139, 0.25);
+        /* ============ FINAL CTA ============ */
+        .final-cta {
+            background: linear-gradient(135deg, var(--color-navy) 0%, #0a1628 50%, #0d3b3a 100%);
+            padding: 100px 0;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
-
-        .form-submit-btn::after {
+        .final-cta::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.5s ease, height 0.5s ease;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(13, 148, 136, 0.3) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .final-cta h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .final-cta p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 520px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+        .final-cta .btn {
+            position: relative;
+            z-index: 1;
         }
 
-        .form-submit-btn:active::after {
-            width: 200px;
-            height: 200px;
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--color-navy);
+            color: rgba(255, 255, 255, 0.75);
+            padding: 60px 0 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .footer-brand .tagline {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.6;
+            max-width: 280px;
+        }
+        .footer h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+        }
+        .footer-links a:hover {
+            color: #fff;
+            padding-left: 4px;
+        }
+        .footer-contact p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+        .footer-contact a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-bottom p {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .footer-bottom a {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: underline;
+            transition: var(--transition-fast);
+        }
+        .footer-bottom a:hover {
+            color: #fff;
         }
 
-        .form-submit-btn:hover {
-            background: var(--primary-dark);
-            box-shadow: 0 6px 20px rgba(12, 139, 139, 0.35);
+        /* ============ PRIVACY POLICY OVERLAY ============ */
+        .privacy-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.98);
+            overflow-y: auto;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+            padding: 40px 20px;
+        }
+        .privacy-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .privacy-content {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 40px 36px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid rgba(15, 30, 46, 0.08);
+        }
+        .privacy-content h2 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-navy);
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .privacy-content .last-updated {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        .privacy-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-navy);
+            margin: 24px 0 12px;
+        }
+        .privacy-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .privacy-content ul li {
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 0.92rem;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+        .privacy-content ul li::before {
+            content: '•';
+            position: absolute;
+            left: 4px;
+            color: var(--color-primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .privacy-close-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: var(--color-navy);
+            color: #fff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 24px;
+            transition: var(--transition-fast);
+        }
+        .privacy-close-btn:hover {
+            background: var(--color-primary);
             transform: translateY(-2px);
         }
 
-        .form-note {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-top: 16px;
-            text-align: center;
-        }
-
-        @media (max-width: 992px) {
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-form-wrapper {
+                max-width: 520px;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .why-us-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .why-us-image img {
+                height: 300px;
+            }
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
-            .contact-info h2 {
-                font-size: 1.8rem;
-            }
-            .contact-form-wrapper {
-                padding: 28px 20px;
-            }
-            .map-container {
-                aspect-ratio: 16/9;
-                min-height: 300px;
-            }
-        }
-
-        /* ============================================
-                   FOOTER
-                   ============================================ */
-        .footer {
-            background: #0a3d3d;
-            color: rgba(255, 255, 255, 0.8);
-            padding: 80px 0 0;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1.5fr 1fr;
-            gap: 40px;
-            padding-bottom: 48px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-brand .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--white);
-            margin-bottom: 16px;
-        }
-
-        .footer-brand .footer-logo .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1rem;
-            transition: transform 0.4s ease;
-        }
-
-        .footer-brand .footer-logo:hover .logo-icon {
-            transform: rotate(360deg);
-        }
-
-        .footer-brand p {
-            font-size: 0.9rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 20px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 12px;
-        }
-
-        .footer-social a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1rem;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .footer-social a:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-4px) rotate(8deg);
-            box-shadow: 0 4px 12px rgba(12, 139, 139, 0.4);
-        }
-
-        .footer h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .footer-links li:hover {
-            transform: translateX(6px);
-        }
-
-        .footer-links a {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-contact-info li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 12px;
-            line-height: 1.6;
-            transition: transform 0.3s ease;
-        }
-
-        .footer-contact-info li:hover {
-            transform: translateX(6px);
-        }
-
-        .footer-contact-info li i {
-            color: var(--primary);
-            margin-top: 4px;
-            flex-shrink: 0;
-            width: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .footer-contact-info li:hover i {
-            transform: scale(1.3);
-        }
-
-        .footer-contact-info li a {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .footer-contact-info li a:hover {
-            color: var(--white);
-        }
-
-        .footer-hours li {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            transition: background 0.3s ease;
-        }
-
-        .footer-hours li:hover {
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .footer-hours li:last-child {
-            border-bottom: none;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding: 24px 0;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .footer-bottom a {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .footer-bottom a:hover {
-            color: var(--white);
-        }
-
-        @media (max-width: 992px) {
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 32px;
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 768px) {
+            :root {
+                --nav-height: 60px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero {
+                padding-top: calc(var(--nav-height) + 20px);
+                min-height: auto;
+                padding-bottom: 40px;
+            }
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .hero h1 {
+                font-size: clamp(1.8rem, 5vw, 2.6rem);
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .hero-form-wrapper {
+                padding: 24px 20px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .section {
+                padding: 70px 0;
+            }
+            .section-header {
+                margin-bottom: 40px;
+            }
+            .contact-grid {
+                gap: 24px;
+            }
+            .final-cta {
+                padding: 70px 0;
+            }
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 28px;
             }
-            .footer {
-                padding: 60px 0 0;
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .privacy-content {
+                padding: 28px 20px;
+            }
+            .mobile-tray {
+                max-width: 100%;
+                width: 85%;
             }
         }
 
-        /* ============================================
-                   SCROLL ANIMATIONS - PREMIUM
-                   ============================================ */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            filter: blur(10px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        filter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            will-change: opacity, transform, filter;
-        }
-
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-            filter: blur(0);
-        }
-
-        .scroll-reveal-left {
-            opacity: 0;
-            transform: translateX(-60px);
-            filter: blur(8px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        filter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .scroll-reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-            filter: blur(0);
-        }
-
-        .scroll-reveal-right {
-            opacity: 0;
-            transform: translateX(60px);
-            filter: blur(8px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        filter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .scroll-reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-            filter: blur(0);
-        }
-
-        .scroll-reveal-scale {
-            opacity: 0;
-            transform: scale(0.85);
-            filter: blur(6px);
-            transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                        filter 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .scroll-reveal-scale.visible {
-            opacity: 1;
-            transform: scale(1);
-            filter: blur(0);
-        }
-
-        .scroll-reveal-delay-1 { transition-delay: 0.1s; }
-        .scroll-reveal-delay-2 { transition-delay: 0.2s; }
-        .scroll-reveal-delay-3 { transition-delay: 0.3s; }
-        .scroll-reveal-delay-4 { transition-delay: 0.4s; }
-
-        /* ============================================
-                   KEYFRAMES ANIMATIONS
-                   ============================================ */
-        @keyframes bodyFadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes navSlideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        @keyframes heroBgIn {
-            from { opacity: 0; transform: scale(1.05); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInScale {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes fadeInTag {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        @keyframes floatY {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        @keyframes pulseIcon {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.1); }
-        }
-
-        @keyframes shimmer {
-            0% { text-shadow: 0 0 10px rgba(245,215,168,0.3); }
-            50% { text-shadow: 0 0 20px rgba(245,215,168,0.6); }
-            100% { text-shadow: 0 0 10px rgba(245,215,168,0.3); }
-        }
-
-        @keyframes floatBlob {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(80px, 60px) scale(1.15); }
-        }
-
-        @keyframes patternDrift {
-            0% { background-position: 0 0; }
-            100% { background-position: 100px 100px; }
-        }
-
-        /* ============================================
-                   BACK TO TOP BUTTON
-                   ============================================ */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 16px rgba(12, 139, 139, 0.35);
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            z-index: 999;
-            border: none;
-            cursor: pointer;
-            animation: none;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0);
-            animation: floatBtn 2s infinite;
-        }
-
-        .back-to-top:hover {
-            background: var(--primary-dark);
-            transform: translateY(-4px) scale(1.1);
-            box-shadow: 0 8px 24px rgba(12, 139, 139, 0.45);
-            animation-play-state: paused;
-        }
-
-        @keyframes floatBtn {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        /* ============================================
-                   ACCESSIBILITY
-                   ============================================ */
-        :focus-visible {
-            outline: 3px solid var(--primary);
-            outline-offset: 2px;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
+        @media (max-width: 480px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
             }
-            .scroll-reveal,
-            .scroll-reveal-left,
-            .scroll-reveal-right,
-            .scroll-reveal-scale {
-                opacity: 1;
-                transform: none;
-                filter: none;
+            .hero-form-wrapper {
+                padding: 20px 16px;
             }
-            .hero-text h1 span {
-                animation: none;
+            .container {
+                padding: 0 16px;
             }
+            .section {
+                padding: 56px 0;
+            }
+            .reviews-overall .big-rating {
+                font-size: 2.4rem;
+            }
+        }
+
+        /* Smooth transition for section anchors */
+        .section-anchor {
+            scroll-margin-top: calc(var(--nav-height) + 12px);
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================================
-    NAVIGATION
-    ============================================ -->
-    <header class="navbar" id="navbar" role="banner">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo" aria-label="Goodwin Dental Practice Home">
-                <span class="logo-icon" aria-hidden="true">
-                    <i class="fas fa-tooth"></i>
-                </span>
-                Goodwin Dental
+    <!-- ============ NAVIGATION ============ -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container-nav">
+            <a href="#home" class="logo" aria-label="Goodwin & Associates home">
+                <span class="logo-icon">G</span>
+                <span>Goodwin &amp; Associates</span>
             </a>
-
-            <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main navigation">
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#why-choose">Why Choose Us</a>
-                <a href="#team">Team</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <div class="nav-cta">
-                <a href="#contact" class="nav-book-btn">Book Appointment</a>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active-link">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <!-- ============================================
-    HERO SECTION
-    ============================================ -->
-    <section class="hero" id="home" role="banner">
-        <div class="hero-bg-pattern" aria-hidden="true"></div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <span class="hero-badge">
-                    <i class="fas fa-star" aria-hidden="true"></i>
-                    Trusted Dental Care in Cockermouth
-                </span>
-                <h1>Quality Dental Care for <span>Healthy Smiles</span></h1>
-                <p class="hero-subtitle">
-                    Goodwin Dental Practice provides professional, friendly dental care in the heart of
-                    Cockermouth, Cumbria. Led by Principal Dentist Deborah Goodwin and our experienced team.
+    <!-- Mobile Tray Overlay -->
+    <div class="tray-overlay" id="trayOverlay"></div>
+
+    <!-- Mobile Tray Menu -->
+    <div class="mobile-tray" id="mobileTray" role="dialog" aria-label="Mobile navigation">
+        <ul class="tray-links">
+            <li><a href="#home" class="tray-link">Home</a></li>
+            <li><a href="#about" class="tray-link">About</a></li>
+            <li><a href="#portfolio" class="tray-link">Portfolio</a></li>
+            <li><a href="#services" class="tray-link">Services</a></li>
+            <li><a href="#reviews" class="tray-link">Reviews</a></li>
+            <li><a href="#contact" class="tray-link">Contact</a></li>
+        </ul>
+        <div class="tray-footer">
+            <p>Call us today</p>
+            <a href="tel:+441900823467" class="phone-link">+44 1900 823467</a>
+            <p style="margin-top:12px;">57 Kirkgate, Cockermouth<br>CA13 9PH, United Kingdom</p>
+        </div>
+    </div>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="home" class="hero section-anchor">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-pre-headline animate-fade-in-up">
+                    <span class="star">★</span> Rated 4.9/5 by 316+ Patients
+                </div>
+                <h1 class="animate-fade-in-up delay-1">
+                    Exceptional Dental Care<br>
+                    in the Heart of <span class="highlight">Cockermouth</span>
+                </h1>
+                <p class="hero-subheadline animate-fade-in-up delay-2">
+                    From routine check-ups to transformative smile makeovers and dental implants — Goodwin &amp; Associates delivers
+                    world-class dentistry with a personal, caring touch. Your comfort is our priority.
                 </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-accent btn-lg">
-                        <i class="fas fa-calendar-check" aria-hidden="true"></i>
-                        Book an Appointment
-                    </a>
-                    <a href="tel:01900823467" class="btn btn-outline btn-lg">
-                        <i class="fas fa-phone" aria-hidden="true"></i>
-                        Call Us
-                    </a>
+                <div class="hero-buttons animate-fade-in-up delay-3">
+                    <a href="#contact" class="btn btn-primary">Get a Quote <span>→</span></a>
+                    <a href="#portfolio" class="btn btn-outline">See Our Work</a>
                 </div>
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <span class="stat-number" data-count="8">0</span>
-                        <span class="stat-label">Dental Services</span>
+                <div class="hero-social-proof animate-fade-in-up delay-4">
+                    <div class="hero-rating">
+                        <span class="stars">★★★★★</span>
+                        <span class="rating-text">4.9 / 5 — 316 Google Reviews</span>
                     </div>
-                    <div class="hero-stat">
-                        <span class="stat-number" data-count="5">0</span>
-                        <span class="stat-label">Days a Week</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="stat-number" data-count="100">0</span>
-                        <span class="stat-label">Professional Care</span>
+                    <div class="hero-avatars">
+                        <span class="avatar">E</span>
+                        <span class="avatar">T</span>
+                        <span class="avatar">L</span>
+                        <span class="avatar">J</span>
+                        <span class="avatar-count">+312 more happy patients</span>
                     </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="hero-image-placeholder" aria-hidden="true">
-                    <i class="fas fa-tooth"></i>
-                </div>
+            <div class="hero-form-wrapper animate-fade-in-up delay-3">
+                <h3>Book Your Consultation</h3>
+                <p class="form-subtitle">Free initial consultation — no obligation</p>
+                <form id="heroForm" onsubmit="event.preventDefault(); alert('Thank you! We\'ll be in touch within 24 hours.');">
+                    <div class="form-group">
+                        <label for="formName">Full Name *</label>
+                        <input type="text" id="formName" placeholder="John Smith" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formEmail">Email *</label>
+                            <input type="email" id="formEmail" placeholder="john@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="formPhone">Phone *</label>
+                            <input type="tel" id="formPhone" placeholder="+44 7000 000000" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="formType">Treatment Type</label>
+                            <select id="formType">
+                                <option value="">Select treatment...</option>
+                                <option value="general">General Check-up</option>
+                                <option value="cosmetic">Cosmetic Dentistry</option>
+                                <option value="implants">Dental Implants</option>
+                                <option value="whitening">Teeth Whitening</option>
+                                <option value="orthodontics">Orthodontics</option>
+                                <option value="emergency">Emergency Care</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="formBudget">Budget Range</label>
+                            <select id="formBudget">
+                                <option value="">Select budget...</option>
+                                <option value="under500">Under £500</option>
+                                <option value="500-1500">£500 – £1,500</option>
+                                <option value="1500-3000">£1,500 – £3,000</option>
+                                <option value="3000-5000">£3,000 – £5,000</option>
+                                <option value="5000+">£5,000+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formTimeline">Timeline</label>
+                        <select id="formTimeline">
+                            <option value="">Select timeline...</option>
+                            <option value="asap">ASAP / Emergency</option>
+                            <option value="1month">Within 1 Month</option>
+                            <option value="1-3months">1 – 3 Months</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="formMessage">Message (optional)</label>
+                        <textarea id="formMessage" placeholder="Tell us about your dental concerns..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit-btn">Request Appointment →</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-    ABOUT SECTION
-    ============================================ -->
-    <section class="about" id="about" role="region" aria-label="About Goodwin Dental Practice">
+    <!-- ============ SERVICES SECTION ============ -->
+    <section id="services" class="section section-bg-alt section-anchor">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-image scroll-reveal-left" aria-hidden="true">
-                    <i class="fas fa-clinic-medical"></i>
-                </div>
-                <div class="about-text scroll-reveal-right scroll-reveal-delay-1">
-                    <span class="section-tag">About Us</span>
-                    <h2>Your Local Dental Practice in Cockermouth</h2>
-                    <p>
-                        Goodwin Dental Practice is located on Kirkgate in Cockermouth, Cumbria, providing
-                        high-quality dental care to the local community. The practice is led by practice owner
-                        and Principal Dentist <strong>Deborah Goodwin</strong>.
-                    </p>
-                    <p>
-                        Our professional dental team is committed to delivering patient-focused care in a
-                        welcoming and comfortable environment. We offer a comprehensive range of dental
-                        treatments to help you achieve and maintain a healthy smile.
-                    </p>
-                    <div class="about-highlight">
-                        <i class="fas fa-user-doctor" aria-hidden="true"></i>
-                        <p>
-                            <strong>Led by Deborah Goodwin</strong> — Principal Dentist with a professional
-                            team dedicated to quality dental care.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    SERVICES SECTION
-    ============================================ -->
-    <section class="services" id="services" role="region" aria-label="Our Services">
-        <div class="container">
-            <div class="section-header scroll-reveal">
+            <div class="section-header scroll-animate">
                 <span class="section-tag">Our Services</span>
-                <h2>Comprehensive Dental Treatments</h2>
-                <p>We offer a wide range of dental services to meet the needs of every patient, from routine care to advanced treatments.</p>
+                <h2 class="section-title">Comprehensive Dental Care for the Whole Family</h2>
+                <p class="section-subtitle">From preventive care to advanced restorative dentistry, we offer a full range of treatments under one roof.</p>
             </div>
             <div class="services-grid">
-                <!-- Teeth Whitening -->
-                <article class="service-card scroll-reveal-scale">
-                    <div class="service-icon" aria-hidden="true"><i class="fas fa-teeth"></i></div>
-                    <h3>Teeth Whitening</h3>
-                    <p>Professional teeth whitening treatments to brighten your smile and boost your confidence.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-                <!-- Sedation -->
-                <article class="service-card scroll-reveal-scale scroll-reveal-delay-1">
-                    <div class="service-icon" aria-hidden="true"><i class="fas fa-moon"></i></div>
-                    <h3>Sedation</h3>
-                    <p>Dental sedation options for anxious patients to ensure a calm and comfortable experience.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-                <!-- Facial Aesthetics -->
-                <article class="service-card scroll-reveal-scale scroll-reveal-delay-2">
-                    <div class="service-icon" aria-hidden="true"><i class="fas fa-face-smile"></i></div>
-                    <h3>Facial Aesthetics</h3>
-                    <p>Facial aesthetic treatments to enhance your natural features and complement your smile.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-                <!-- Dental Implants -->
-                <article class="service-card scroll-reveal-scale scroll-reveal-delay-3">
-                    <div class="service-icon" aria-hidden="true"><i class="fas fa-tooth"></i></div>
-                    <h3>Dental Implants</h3>
-                    <p>Permanent tooth replacement solutions designed to look, feel, and function like natural teeth.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-                <!-- Invisalign -->
-                <article class="service-card scroll-reveal-scale">
-                    <div class="service-icon" aria-hidden="true"><i class="fas fa-align-center"></i></div>
-                    <h3>Invisalign</h3>
-                    <p>Clear aligner orthodontic treatment to straighten your teeth discreetly and comfortably.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-                <!-- Dental Hygiene -->
-                <article class="service-card scroll-reveal-scale scroll-reveal-delay-1">
-                    <div class="service-icon" aria-hidden="true"><i class="fas fa-brush"></i></div>
-                    <h3>Dental Hygiene</h3>
-                    <p>Professional dental cleaning and hygiene services to maintain optimal oral health.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-                <!-- General Dentistry -->
-                <article class="service-card scroll-reveal-scale scroll-reveal-delay-2">
-                    <div class="service-icon" aria-hidden="true"><i class="fas fa-stethoscope"></i></div>
+                <div class="service-card scroll-animate delay-scroll-1">
+                    <div class="service-icon">🦷</div>
                     <h3>General Dentistry</h3>
-                    <p>Comprehensive dental care including check-ups, examinations, and routine treatments.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-                <!-- Dental Fillings -->
-                <article class="service-card scroll-reveal-scale scroll-reveal-delay-3">
-                    <div class="service-icon" aria-hidden="true"><i class="fas fa-fill-drip"></i></div>
-                    <h3>Dental Fillings</h3>
-                    <p>Restorative dental fillings to repair cavities and restore the function of damaged teeth.</p>
-                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    WHY CHOOSE US SECTION
-    ============================================ -->
-    <section class="why-choose" id="why-choose" role="region" aria-label="Why Choose Us">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-tag">Why Choose Us</span>
-                <h2>Why Patients Trust Goodwin Dental</h2>
-                <p>We are committed to providing the highest standard of dental care in a welcoming environment.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card scroll-reveal">
-                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-award"></i></div>
-                    <h3>Professional Dental Care</h3>
-                    <p>High standards of clinical care and attention to detail in every treatment we provide.</p>
+                    <p>Routine check-ups, fillings, root canals, and preventive care to keep your smile healthy for life. Warm, gentle, and thorough.</p>
+                    <a href="#contact" class="btn-link">Learn More →</a>
                 </div>
-                <div class="feature-card scroll-reveal scroll-reveal-delay-1">
-                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-user-doctor"></i></div>
-                    <h3>Experienced Dental Team</h3>
-                    <p>Our experienced team is led by Principal Dentist Deborah Goodwin, dedicated to patient care.</p>
+                <div class="service-card scroll-animate delay-scroll-2">
+                    <div class="service-icon">✨</div>
+                    <h3>Cosmetic Dentistry</h3>
+                    <p>Teeth whitening, porcelain veneers, and complete smile makeovers designed to give you the confidence you've always wanted.</p>
+                    <a href="#contact" class="btn-link">Learn More →</a>
                 </div>
-                <div class="feature-card scroll-reveal scroll-reveal-delay-2">
-                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-microscope"></i></div>
-                    <h3>Modern Treatment Options</h3>
-                    <p>We offer a range of modern dental treatments tailored to your individual needs.</p>
-                </div>
-                <div class="feature-card scroll-reveal scroll-reveal-delay-3">
-                    <div class="feature-icon" aria-hidden="true"><i class="fas fa-heart"></i></div>
-                    <h3>Friendly Patient Care</h3>
-                    <p>A warm, welcoming environment where every patient is treated with kindness and respect.</p>
+                <div class="service-card scroll-animate delay-scroll-3">
+                    <div class="service-icon">🔩</div>
+                    <h3>Implants &amp; Restorative</h3>
+                    <p>Dental implants, crowns, and bridges that look, feel, and function like natural teeth. Permanent solutions for missing teeth.</p>
+                    <a href="#contact" class="btn-link">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-    TEAM PREVIEW SECTION
-    ============================================ -->
-    <section class="team-preview" id="team" role="region" aria-label="Our Team">
+    <!-- ============ WHY US / ABOUT SECTION ============ -->
+    <section id="about" class="section section-anchor">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-tag">Our Team</span>
-                <h2>Meet Your Dental Professionals</h2>
-                <p>Led by an experienced principal dentist, our team is here to care for your oral health.</p>
-            </div>
-            <div class="team-card scroll-reveal-scale">
-                <div class="team-image" aria-hidden="true">
-                    <i class="fas fa-user-doctor"></i>
+            <div class="why-us-grid">
+                <div class="why-us-image scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80" alt="Goodwin & Associates dental practice interior" loading="lazy">
                 </div>
-                <h3>Deborah Goodwin</h3>
-                <p class="team-role">Principal Dentist</p>
-                <p class="team-bio">
-                    Practice owner and principal dentist at Goodwin Dental Practice,
-                    leading the team in delivering quality dental care in Cockermouth.
-                </p>
-                <a href="#contact" class="btn btn-outline-dark btn-sm">Meet Our Team</a>
+                <div class="why-us-content scroll-animate delay-scroll-1">
+                    <span class="section-tag">Why Choose Us</span>
+                    <h2>Trusted by Cockermouth Families for Over 30 Years</h2>
+                    <p>At Goodwin &amp; Associates, we combine clinical excellence with genuine care. Our patients stay with us for life because we treat every smile as if it were our own.</p>
+                    <ul class="differentiators">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Unrivalled Experience</strong> — Led by Deborah Goodwin with over 30 years of dental expertise and a passion for continuing education.</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Exceptional Quality</strong> — State-of-the-art technology and materials ensure every treatment is precise, durable, and beautifully natural.</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Personalised Design Process</strong> — Every treatment plan is bespoke, developed collaboratively with you to achieve your goals on your timeline.</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span><strong>Warm, Welcoming Team</strong> — Our friendly reception staff and dental nurses make every visit comfortable from the moment you walk in.</span>
+                        </li>
+                    </ul>
+                    <a href="#reviews" class="btn btn-primary">Read Patient Reviews <span>→</span></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-    CONTACT SECTION
-    ============================================ -->
-    <section class="contact" id="contact" role="region" aria-label="Contact Us">
+    <!-- ============ PORTFOLIO / OUR WORK SECTION ============ -->
+    <section id="portfolio" class="section section-bg-alt section-anchor">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <span class="section-tag">Contact Us</span>
-                <h2>Get in Touch</h2>
-                <p>We're here to help. Contact us to book an appointment or ask a question.</p>
+            <div class="section-header scroll-animate">
+                <span class="section-tag">Our Work</span>
+                <h2 class="section-title">Real Smiles. Real Transformations.</h2>
+                <p class="section-subtitle">Take a look at some of the beautiful results we've achieved for our patients. Your dream smile is closer than you think.</p>
             </div>
-            <div class="contact-grid">
-                <!-- Contact Info -->
-                <div class="contact-info scroll-reveal-left">
-                    <span class="section-tag">Contact Information</span>
-                    <h2>We'd Love to Hear From You</h2>
-                    <p>
-                        If you have any questions or would like to book an appointment, please
-                        don't hesitate to get in touch with our friendly team.
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon" aria-hidden="true">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <a href="tel:01900823467">01900 823467</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon" aria-hidden="true">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <a href="mailto:reception@goodwindentalpractice.co.uk">reception@goodwindentalpractice.co.uk</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon" aria-hidden="true">
-                                <i class="fas fa-location-dot"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Address</h4>
-                                <p>57 Kirkgate, Cockermouth,<br>Cumbria, CA13 9PH<br>United Kingdom</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon" aria-hidden="true">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Opening Hours</h4>
-                                <p>
-                                    Mon–Thu: 8:30 AM – 5:30 PM<br>
-                                    Fri: 8:30 AM – 5:00 PM<br>
-                                    Appointments from 8:45 AM
-                                </p>
-                            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item scroll-animate delay-scroll-1">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80" alt="Smile transformation case 1" loading="lazy">
+                    <div class="overlay"><span>Porcelain Veneers</span></div>
+                </div>
+                <div class="portfolio-item scroll-animate delay-scroll-2">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="Dental implant case" loading="lazy">
+                    <div class="overlay"><span>Dental Implant Restoration</span></div>
+                </div>
+                <div class="portfolio-item scroll-animate delay-scroll-3">
+                    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80" alt="Teeth whitening results" loading="lazy">
+                    <div class="overlay"><span>Teeth Whitening</span></div>
+                </div>
+                <div class="portfolio-item scroll-animate delay-scroll-1">
+                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600&q=80" alt="Orthodontic treatment" loading="lazy">
+                    <div class="overlay"><span>Orthodontic Alignment</span></div>
+                </div>
+                <div class="portfolio-item scroll-animate delay-scroll-2">
+                    <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=80" alt="Crown restoration" loading="lazy">
+                    <div class="overlay"><span>Crown &amp; Bridge Work</span></div>
+                </div>
+                <div class="portfolio-item scroll-animate delay-scroll-3">
+                    <img src="https://images.unsplash.com/photo-1588776813677-77aaf5595b83?w=600&q=80" alt="Smile makeover" loading="lazy">
+                    <div class="overlay"><span>Full Smile Makeover</span></div>
+                </div>
+            </div>
+            <div class="portfolio-cta scroll-animate">
+                <a href="#contact" class="btn btn-gold">Start Your Transformation <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ REVIEWS SECTION ============ -->
+    <section id="reviews" class="section section-anchor">
+        <div class="container">
+            <div class="section-header scroll-animate">
+                <span class="section-tag">Patient Reviews</span>
+                <h2 class="section-title">What Our Patients Say</h2>
+                <p class="section-subtitle">We're proud to be one of the most highly rated dental practices in Cumbria.</p>
+            </div>
+            <div class="reviews-overall scroll-animate">
+                <div class="big-rating">4.9</div>
+                <div class="big-stars">★★★★★</div>
+                <div class="count">Based on 316 Google Reviews</div>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card scroll-animate delay-scroll-1">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"I've always had a great experience at this practice. The reception team are friendly, helpful, and welcoming, making appointments and queries easy to manage."</p>
+                    <div class="review-author">
+                        <span class="avatar-sm">EA</span>
+                        <div>
+                            <div class="name">Emily Andersen</div>
+                            <div class="date">2 months ago</div>
                         </div>
                     </div>
                 </div>
+                <div class="review-card scroll-animate delay-scroll-2">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Friendly staff on reception and I was very impressed how a staff member went out of their way to locate some floss for me. Excellent service throughout."</p>
+                    <div class="review-author">
+                        <span class="avatar-sm">T</span>
+                        <div>
+                            <div class="name">Tony</div>
+                            <div class="date">6 months ago</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card scroll-animate delay-scroll-3">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Always had excellent service from Deborah Goodwin. She was so kind with our daughter as a toddler — we've been having regular check-ups ever since."</p>
+                    <div class="review-author">
+                        <span class="avatar-sm">LJ</span>
+                        <div>
+                            <div class="name">Lisa Jones-Taylor</div>
+                            <div class="date">3 months ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Contact Form -->
-                <div class="contact-form-wrapper scroll-reveal-right scroll-reveal-delay-1">
-                    <h3>Book an Appointment</h3>
-                    <p>Fill in the form below and we'll get back to you as soon as possible.</p>
-                    <form id="contactForm" action="#" method="post" novalidate>
+    <!-- ============ CONTACT SECTION ============ -->
+    <section id="contact" class="section section-bg-alt section-anchor">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info scroll-animate">
+                    <span class="section-tag">Contact Us</span>
+                    <h2>Let's Talk About Your Smile</h2>
+                    <p>Ready to book an appointment or have a question? We're here to help. Reach out via phone, email, or drop by our practice in the heart of Cockermouth.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <span class="icon-box">📞</span>
+                            <span><strong>Phone:</strong> <a href="tel:+441900823467">+44 1900 823467</a></span>
+                        </li>
+                        <li>
+                            <span class="icon-box">✉️</span>
+                            <span><strong>Email:</strong> <a href="mailto:info@goodwindentalpractice.co.uk">info@goodwindentalpractice.co.uk</a></span>
+                        </li>
+                        <li>
+                            <span class="icon-box">📍</span>
+                            <span><strong>Address:</strong> 57 Kirkgate, Cockermouth CA13 9PH, United Kingdom</span>
+                        </li>
+                        <li>
+                            <span class="icon-box">🕐</span>
+                            <span><strong>Hours:</strong> Mon–Fri 8:30 AM – 5:30 PM</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hero-form-wrapper scroll-animate delay-scroll-1" style="background:rgba(15,30,46,0.04); backdrop-filter:none; -webkit-backdrop-filter:none; border-color:rgba(15,30,46,0.1); box-shadow:var(--shadow-md);">
+                    <h3 style="color:var(--color-navy);">Quick Enquiry</h3>
+                    <p class="form-subtitle" style="color:var(--color-text-light);">Send us a message and we'll get back to you within 24 hours.</p>
+                    <form onsubmit="event.preventDefault(); alert('Thank you! We\'ll respond within 24 hours.');">
                         <div class="form-group">
-                            <label for="formName">Full Name *</label>
-                            <input type="text" id="formName" name="name" placeholder="Your full name" required autocomplete="name">
+                            <label for="contactName" style="color:var(--color-text);">Full Name *</label>
+                            <input type="text" id="contactName" placeholder="Your name" required style="border-color:rgba(15,30,46,0.15); background:#fff; color:var(--color-text);">
                         </div>
                         <div class="form-group">
-                            <label for="formEmail">Email Address *</label>
-                            <input type="email" id="formEmail" name="email" placeholder="your@email.com" required autocomplete="email">
+                            <label for="contactEmail" style="color:var(--color-text);">Email *</label>
+                            <input type="email" id="contactEmail" placeholder="Your email" required style="border-color:rgba(15,30,46,0.15); background:#fff; color:var(--color-text);">
                         </div>
                         <div class="form-group">
-                            <label for="formPhone">Phone Number</label>
-                            <input type="tel" id="formPhone" name="phone" placeholder="Your phone number" autocomplete="tel">
+                            <label for="contactMsg" style="color:var(--color-text);">Message *</label>
+                            <textarea id="contactMsg" placeholder="How can we help?" required style="border-color:rgba(15,30,46,0.15); background:#fff; color:var(--color-text);"></textarea>
                         </div>
-                        <div class="form-group">
-                            <label for="formMessage">Message *</label>
-                            <textarea id="formMessage" name="message" placeholder="How can we help you?" required></textarea>
-                        </div>
-                        <button type="submit" class="form-submit-btn">
-                            Send Message <i class="fas fa-paper-plane" aria-hidden="true" style="margin-left:8px;"></i>
-                        </button>
-                        <p class="form-note">
-                            * Required fields. We will never share your information.
-                        </p>
+                        <button type="submit" class="form-submit-btn">Send Message →</button>
                     </form>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Google Map -->
-            <div class="map-container scroll-reveal-scale" style="margin-top:48px;">
-                <iframe
-                src="https://www.google.com/maps?q=57+Kirkgate,+Cockermouth,+Cumbria,+CA13+9PH,+United+Kingdom&output=embed"
-                title="Map showing Goodwin Dental Practice at 57 Kirkgate, Cockermouth, Cumbria, CA13 9PH"
-                loading="lazy"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="scroll-animate">Your Dream Smile Starts Here</h2>
+            <p class="scroll-animate delay-scroll-1">Book a consultation today and discover why hundreds of patients across Cockermouth trust Goodwin &amp; Associates with their smiles.</p>
+            <a href="#contact" class="btn btn-primary scroll-animate delay-scroll-2">Get a Free Quote <span>→</span></a>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-icon">G</span>
+                        <span>Goodwin &amp; Associates</span>
+                    </a>
+                    <p class="tagline">Premium dental care in the heart of Cockermouth. Trusted by over 300 patients for exceptional, personalised dentistry.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <div class="footer-contact">
+                        <p><strong>Phone:</strong> <a href="tel:+441900823467">+44 1900 823467</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@goodwindentalpractice.co.uk">info@goodwindentalpractice.co.uk</a></p>
+                        <p><strong>Address:</strong><br>57 Kirkgate,<br>Cockermouth CA13 9PH<br>United Kingdom</p>
+                    </div>
+                </div>
+                <div>
+                    <h4>Practice Hours</h4>
+                    <div class="footer-contact">
+                        <p>Monday – Friday<br>8:30 AM – 5:30 PM</p>
+                        <p>Saturday &amp; Sunday<br>Closed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Goodwin &amp; Associates LLC. All rights reserved.</p>
+                <a href="#" id="privacyLink">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ PRIVACY POLICY OVERLAY ============ -->
+    <div class="privacy-overlay" id="privacyOverlay" role="dialog" aria-label="Privacy Policy">
+        <div class="privacy-content">
+            <h2>Privacy Policy</h2>
+            <p class="last-updated">Last updated: September 2025</p>
+            <p style="font-size:0.92rem; color:var(--color-text-light); margin-bottom:20px;">At Goodwin &amp; Associates, we are committed to protecting your privacy and ensuring the security of your personal information. This policy outlines how we collect, use, and safeguard your data.</p>
+
+            <h3>1. Data We Collect</h3>
+            <ul>
+                <li>Personal identification details (name, email address, phone number)</li>
+                <li>Dental and medical information provided during consultations</li>
+                <li>Appointment history and treatment records</li>
+                <li>Payment information (processed securely via third-party providers)</li>
+                <li>Website usage data (cookies, analytics, device information)</li>
+                <li>Communication preferences and feedback</li>
+            </ul>
+
+            <h3>2. Purpose of Collection</h3>
+            <ul>
+                <li>To schedule and manage appointments effectively</li>
+                <li>To provide personalised dental care and treatment planning</li>
+                <li>To communicate important updates, reminders, and follow-ups</li>
+                <li>To process payments securely</li>
+                <li>To improve our services and website experience</li>
+                <li>To comply with legal and regulatory requirements</li>
+            </ul>
+
+            <h3>3. Data Retention</h3>
+            <ul>
+                <li>Dental records are retained for a minimum of 10 years as required by UK healthcare regulations</li>
+                <li>Contact information is kept until you request its removal</li>
+                <li>Marketing communications can be opted out of at any time</li>
+                <li>Website analytics data is retained for 24 months</li>
+            </ul>
+
+            <h3>4. Third-Party Use</h3>
+            <ul>
+                <li>We never sell, rent, or trade your personal information to third parties</li>
+                <li>Data is shared only with trusted service providers (payment processors, IT support) under strict confidentiality agreements</li>
+                <li>Medical information is only shared with other healthcare providers when necessary for your treatment, with your consent</li>
+                <li>We comply with UK GDPR and the Data Protection Act 2018</li>
+            </ul>
+
+            <h3>5. Security Measures</h3>
+            <ul>
+                <li>All data is encrypted in transit (SSL/TLS) and at rest</li>
+                <li>Access to personal information is restricted to authorised staff only</li>
+                <li>Regular security audits and staff training on data protection</li>
+                <li>Firewalls and intrusion detection systems protect our network</li>
+                <li>Secure, monitored premises for physical records</li>
+            </ul>
+
+            <h3>6. Your Rights</h3>
+            <ul>
+                <li>Right to access — request a copy of the personal data we hold about you</li>
+                <li>Right to rectification — correct any inaccurate or incomplete information</li>
+                <li>Right to erasure — request deletion of your personal data (subject to legal retention requirements)</li>
+                <li>Right to restrict processing — limit how we use your data</li>
+                <li>Right to data portability — receive your data in a machine-readable format</li>
+                <li>Right to object — object to certain types of processing, including marketing</li>
+                <li>Right to withdraw consent — at any time, without affecting prior lawful processing</li>
+            </ul>
+
+            <h3>7. Cookies &amp; Analytics</h3>
+            <ul>
+                <li>We use cookies to enhance your browsing experience and understand site usage</li>
+                <li>Google Analytics is used to analyse traffic patterns (data is anonymised)</li>
+                <li>You can disable cookies via your browser settings at any time</li>
+                <li>Essential cookies are required for site functionality</li>
+            </ul>
+
+            <h3>8. Contact Us</h3>
+            <ul>
+                <li>For any privacy-related enquiries or to exercise your rights, contact us at: <a href="mailto:info@goodwindentalpractice.co.uk" style="color:var(--color-primary); font-weight:600;">info@goodwindentalpractice.co.uk</a></li>
+                <li>Or write to: Goodwin &amp; Associates, 57 Kirkgate, Cockermouth CA13 9PH, United Kingdom</li>
+                <li>You may also contact the Information Commissioner's Office (ICO) for data protection concerns</li>
+            </ul>
+
+            <button class="privacy-close-btn" id="privacyCloseBtn">Close Policy</button>
         </div>
     </div>
-</section>
 
-<!-- ============================================
-FOOTER
-============================================ -->
-<footer class="footer" role="contentinfo">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-icon" aria-hidden="true"><i class="fas fa-tooth"></i></span>
-                    Goodwin Dental Practice
-                </div>
-                <p>
-                    Providing professional dental care in Cockermouth, Cumbria.
-                    Led by Principal Dentist Deborah Goodwin and our dedicated team.
-                </p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#why-choose">Why Choose Us</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Contact Information</h4>
-                <ul class="footer-contact-info">
-                    <li>
-                        <i class="fas fa-phone" aria-hidden="true"></i>
-                        <a href="tel:01900823467">01900 823467</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:reception@goodwindentalpractice.co.uk">reception@goodwindentalpractice.co.uk</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-location-dot" aria-hidden="true"></i>
-                        <span>57 Kirkgate, Cockermouth,<br>Cumbria, CA13 9PH<br>United Kingdom</span>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h4>Opening Hours</h4>
-                <ul class="footer-hours">
-                    <li><span>Monday</span><span>8:30 AM – 5:30 PM</span></li>
-                    <li><span>Tuesday</span><span>8:30 AM – 5:30 PM</span></li>
-                    <li><span>Wednesday</span><span>8:30 AM – 5:30 PM</span></li>
-                    <li><span>Thursday</span><span>8:30 AM – 5:30 PM</span></li>
-                    <li><span>Friday</span><span>8:30 AM – 5:00 PM</span></li>
-                    <li><span>Weekends</span><span>Closed</span></li>
-                    <li><span>Bank Holidays</span><span>Closed</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Goodwin Dental Practice. All rights reserved. | 57 Kirkgate, Cockermouth, Cumbria, CA13 9PH</p>
-        </div>
-    </div>
-</footer>
+    <script>
+        (function() {
+            // ============ PAGE LOAD ANIMATION ============
+            document.body.classList.add('loaded');
 
-<!-- ============================================
-BACK TO TOP BUTTON
-============================================ -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-    <i class="fas fa-chevron-up" aria-hidden="true"></i>
-</button>
+            // ============ NAVBAR SCROLL EFFECT ============
+            const navbar = document.getElementById('navbar');
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileTray = document.getElementById('mobileTray');
+            const trayOverlay = document.getElementById('trayOverlay');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const trayLinks = document.querySelectorAll('.tray-link');
 
-<!-- ============================================
-JAVASCRIPT
-============================================ -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // ============================================
-        // STICKY NAVBAR SHADOW ON SCROLL
-        // ============================================
-        const navbar = document.getElementById('navbar');
-        const backToTop = document.getElementById('backToTop');
-
-        function handleScroll() {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            function handleScroll() {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                updateActiveNav();
             }
 
-            if (window.scrollY > 400) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        handleScroll();
-
-        // ============================================
-        // MOBILE HAMBURGER MENU
-        // ============================================
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('open');
-            const isOpen = navLinks.classList.contains('open');
-            hamburger.setAttribute('aria-expanded', isOpen);
-        });
-
-        // Close mobile menu when a link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-            });
-        });
-
-        // Close mobile menu on resize (if desktop)
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 992) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-            }
-        });
-
-        // ============================================
-        // ACTIVE NAV LINK HIGHLIGHTING
-        // ============================================
-        const sections = document.querySelectorAll('section[id]');
-        const navLinkItems = document.querySelectorAll('.nav-links a');
-
-        function updateActiveNav() {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinkItems.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveNav);
-        updateActiveNav();
-
-        // ============================================
-        // SCROLL REVEAL ANIMATIONS (ENHANCED)
-        // ============================================
-        const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
-
-        const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const revealObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        revealElements.forEach(el => {
-            revealObserver.observe(el);
-        });
-
-        // ============================================
-        // HERO STAT COUNTERS
-        // ============================================
-        const statNumbers = document.querySelectorAll('.stat-number[data-count]');
-        const counterObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseInt(el.getAttribute('data-count'));
-                    const duration = 1500;
-                    const startTime = performance.now();
-
-                    function updateCounter(currentTime) {
-                        const elapsed = currentTime - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        const easedProgress = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-                        const currentValue = Math.floor(easedProgress * target);
-                        el.textContent = currentValue;
-                        if (progress < 1) {
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            el.textContent = target + (target === 100 ? '%' : '');
+            function updateActiveNav() {
+                const sections = ['home', 'about', 'portfolio', 'services', 'reviews', 'contact'];
+                let currentSection = 'home';
+                sections.forEach(id => {
+                    const section = document.getElementById(id);
+                    if (section) {
+                        const rect = section.getBoundingClientRect();
+                        if (rect.top <= 120) {
+                            currentSection = id;
                         }
                     }
-                    requestAnimationFrame(updateCounter);
-                    counterObserver.unobserve(el);
+                });
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href').replace('#', '');
+                    if (href === currentSection) {
+                        link.classList.add('active-link');
+                    } else {
+                        link.classList.remove('active-link');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            handleScroll();
+
+            // ============ MOBILE TRAY ============
+            let trayOpen = false;
+
+            function openTray() {
+                trayOpen = true;
+                mobileTray.classList.add('open');
+                trayOverlay.classList.add('active');
+                hamburgerBtn.classList.add('open');
+                hamburgerBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeTray() {
+                trayOpen = false;
+                mobileTray.classList.remove('open');
+                trayOverlay.classList.remove('active');
+                hamburgerBtn.classList.remove('open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+
+            hamburgerBtn.addEventListener('click', () => {
+                if (trayOpen) {
+                    closeTray();
+                } else {
+                    openTray();
                 }
             });
-        }, { threshold: 0.8 });
 
-        statNumbers.forEach(num => counterObserver.observe(num));
+            trayOverlay.addEventListener('click', closeTray);
 
-        // ============================================
-        // BACK TO TOP BUTTON
-        // ============================================
-        backToTop.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            trayLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    closeTray();
+                    // Let the default anchor behavior happen
+                });
             });
-        });
 
-        // ============================================
-        // CONTACT FORM HANDLING
-        // ============================================
-        const contactForm = document.getElementById('contactForm');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Simple validation
-            const name = document.getElementById('formName').value.trim();
-            const email = document.getElementById('formEmail').value.trim();
-            const message = document.getElementById('formMessage').value.trim();
-            const phone = document.getElementById('formPhone').value.trim();
-
-            let isValid = true;
-
-            if (!name) {
-                isValid = false;
-                markInvalid('formName', 'Please enter your name.');
-            } else {
-                markValid('formName');
-            }
-
-            if (!email || !isValidEmail(email)) {
-                isValid = false;
-                markInvalid('formEmail', 'Please enter a valid email address.');
-            } else {
-                markValid('formEmail');
-            }
-
-            if (!message) {
-                isValid = false;
-                markInvalid('formMessage', 'Please enter a message.');
-            } else {
-                markValid('formMessage');
-            }
-
-            if (isValid) {
-                // Since there's no backend, show a success message
-                const submitBtn = contactForm.querySelector('.form-submit-btn');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Message Sent!';
-                submitBtn.style.background = '#16a34a';
-                submitBtn.disabled = true;
-
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.disabled = false;
-                    contactForm.reset();
-                    clearValidation();
-                }, 3000);
-
-                console.log('Form submitted:', { name, email, phone, message });
-            }
-        });
-
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-
-        function markInvalid(inputId, message) {
-            const input = document.getElementById(inputId);
-            input.style.borderColor = '#ef4444';
-            input.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
-            input.setAttribute('aria-invalid', 'true');
-
-            let errorMsg = input.parentElement.querySelector('.error-message');
-            if (!errorMsg) {
-                errorMsg = document.createElement('span');
-                errorMsg.className = 'error-message';
-                errorMsg.style.color = '#ef4444';
-                errorMsg.style.fontSize = '0.8rem';
-                errorMsg.style.marginTop = '4px';
-                errorMsg.style.display = 'block';
-                input.parentElement.appendChild(errorMsg);
-            }
-            errorMsg.textContent = message;
-        }
-
-        function markValid(inputId) {
-            const input = document.getElementById(inputId);
-            input.style.borderColor = '#22c55e';
-            input.style.boxShadow = '0 0 0 3px rgba(34, 197, 94, 0.1)';
-            input.setAttribute('aria-invalid', 'false');
-
-            const errorMsg = input.parentElement.querySelector('.error-message');
-            if (errorMsg) {
-                errorMsg.remove();
-            }
-        }
-
-        function clearValidation() {
-            const inputs = contactForm.querySelectorAll('input, textarea');
-            inputs.forEach(input => {
-                input.style.borderColor = '';
-                input.style.boxShadow = '';
-                input.removeAttribute('aria-invalid');
-            });
-            contactForm.querySelectorAll('.error-message').forEach(el => el.remove());
-        }
-
-        // ============================================
-        // SMOOTH SCROLLING FOR ALL ANCHOR LINKS
-        // ============================================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    e.preventDefault();
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            // Close tray on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && trayOpen) {
+                    closeTray();
                 }
             });
-        });
-    });
-</script>
+
+            // ============ SMOOTH SCROLLING (native CSS scroll-behavior handles it) ============
+
+            // ============ SCROLL ANIMATIONS (Intersection Observer) ============
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -80px 0px',
+                threshold: 0.1,
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            scrollElements.forEach(el => observer.observe(el));
+
+            // ============ PRIVACY POLICY OVERLAY ============
+            const privacyOverlay = document.getElementById('privacyOverlay');
+            const privacyLink = document.getElementById('privacyLink');
+            const privacyCloseBtn = document.getElementById('privacyCloseBtn');
+
+            function openPrivacy() {
+                privacyOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePrivacy() {
+                privacyOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            privacyLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                openPrivacy();
+            });
+
+            privacyCloseBtn.addEventListener('click', closePrivacy);
+
+            privacyOverlay.addEventListener('click', (e) => {
+                if (e.target === privacyOverlay) {
+                    closePrivacy();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && privacyOverlay.classList.contains('active')) {
+                    closePrivacy();
+                }
+            });
+
+            // ============ MICRO-INTERACTIONS ON BUTTONS ============
+            const allButtons = document.querySelectorAll('.btn, .form-submit-btn, .btn-link');
+            allButtons.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transition =
+                        'transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease';
+                });
+            });
+
+            // ============ HERO FORM FOCUS ENHANCEMENT ============
+            const heroInputs = document.querySelectorAll('#heroForm input, #heroForm select, #heroForm textarea');
+            heroInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.closest('.form-group').style.transform = 'scale(1.01)';
+                });
+                input.addEventListener('blur', function() {
+                    this.closest('.form-group').style.transform = 'scale(1)';
+                });
+                this.closest('.form-group') &&
+                    (this.closest('.form-group').style.transition = 'transform 0.2s ease');
+            });
+
+            // ============ RESIZE HANDLER FOR TRAY ============
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && trayOpen) {
+                    closeTray();
+                }
+            });
+
+            console.log('%c Goodwin & Associates — Premium Dental Practice ',
+                'background: #0d9488; color: #fff; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: bold;'
+                );
+            console.log('%c Designed with care for exceptional smiles. ', 'color: #64748b; font-size: 12px;');
+        })();
+    </script>
 </body>
 </html>
