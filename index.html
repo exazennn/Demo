@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-NZ">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Flooring Company | Carpet, Carpet Tiles, Vinyl, Floor Prep | Auckland Wide</title>
   <meta name="description" content="The Flooring Company provides professional flooring supply and installation throughout the Auckland area. Carpet, carpet tiles, vinyl, and floor prep.">
   <meta name="keywords" content="flooring Auckland, carpet installation, vinyl flooring, floor prep, carpet tiles">
+  <link rel="canonical" href="https://www.theflooringcompany.co.nz/">
+  <meta name="theme-color" content="#1a3c5e">
+
+  <!-- Open Graph -->
   <meta property="og:title" content="The Flooring Company | Carpet, Carpet Tiles, Vinyl, Floor Prep">
   <meta property="og:description" content="Professional flooring supply and installation throughout the Auckland area.">
   <meta property="og:type" content="website">
-  <title>The Flooring Company | Carpet, Carpet Tiles, Vinyl, Floor Prep | Auckland Wide</title>
+  <meta property="og:url" content="https://www.theflooringcompany.co.nz/">
+  <meta property="og:image" content="https://www.theflooringcompany.co.nz/og-image.jpg">
+  <meta property="og:locale" content="en_NZ">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon (inline SVG, no extra request) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a3c5e'/%3E%3Ctext x='32' y='43' font-family='sans-serif' font-size='28' font-weight='bold' fill='%23e8a838' text-anchor='middle'%3ETF%3C/text%3E%3C/svg%3E">
+
+  <!-- Local business structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "The Flooring Company",
+    "description": "Professional flooring supply and installation throughout the Auckland area. Carpet, carpet tiles, vinyl, and floor prep.",
+    "telephone": "+6421791555",
+    "areaServed": { "@type": "City", "name": "Auckland" },
+    "founder": { "@type": "Person", "name": "Daniel Leggett" },
+    "openingHours": "Mo-Sa 07:00-18:00",
+    "priceRange": "$$"
+  }
+  </script>
+
   <style>
     /* ===== RESET & BASE ===== */
     *,
@@ -20,25 +48,24 @@
     }
 
     :root {
-      --primary: #10069f;
-      --primary-light: #3a2ecc;
-      --primary-dark: #0c0578;
-      --accent: #10069f;
-      --accent-hover: #0c0578;
-      --dark: #222222;
-      --text: #444444;
-      --gray-100: #f7f7f7;
-      --gray-200: #e8e8e8;
+      --primary: #1a3c5e;
+      --primary-light: #2a5a8a;
+      --accent: #e8a838;
+      --accent-hover: #d4942a;
+      --dark: #1a1a1a;
+      --gray-100: #f7f8fa;
+      --gray-200: #eef0f3;
       --gray-300: #d1d5db;
-      --gray-500: #949494;
-      --gray-700: #555555;
+      --gray-500: #6b7280;
+      --gray-700: #374151;
       --white: #ffffff;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-      --shadow-md: 0 4px 12px rgba(16,6,159,0.08);
-      --shadow-lg: 0 10px 30px rgba(16,6,159,0.12);
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
       --radius: 8px;
       --radius-lg: 14px;
       --transition: 0.25s ease;
+      --header-h: 72px;
     }
 
     html {
@@ -47,10 +74,11 @@
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      color: var(--text);
+      color: var(--dark);
       background: var(--white);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     img {
@@ -65,6 +93,13 @@
 
     ul {
       list-style: none;
+    }
+
+    /* Global focus ring for keyboard users */
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
     }
 
     .container {
@@ -82,6 +117,7 @@
       margin: -1px;
       overflow: hidden;
       clip: rect(0,0,0,0);
+      white-space: nowrap;
       border: 0;
     }
 
@@ -100,41 +136,27 @@
     }
 
     .btn-primary {
-      background: var(--primary);
-      color: var(--white);
-      border-color: var(--primary);
+      background: var(--accent);
+      color: var(--dark);
+      border-color: var(--accent);
     }
 
     .btn-primary:hover {
-      background: var(--primary-dark);
-      border-color: var(--primary-dark);
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(16,6,159,0.35);
-    }
-
-    .btn-white {
-      background: var(--white);
-      color: var(--primary);
-      border-color: var(--white);
-    }
-
-    .btn-white:hover {
-      background: var(--gray-100);
-      border-color: var(--gray-100);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+      box-shadow: 0 6px 20px rgba(232,168,56,0.35);
     }
 
     .btn-outline {
       background: transparent;
       color: var(--white);
-      border-color: rgba(255,255,255,0.7);
+      border-color: var(--white);
     }
 
     .btn-outline:hover {
       background: var(--white);
       color: var(--primary);
-      border-color: var(--white);
       transform: translateY(-2px);
     }
 
@@ -151,21 +173,21 @@
       right: 0;
       z-index: 1000;
       background: transparent;
-      transition: all var(--transition);
+      transition: background var(--transition), box-shadow var(--transition);
     }
 
     .site-header.scrolled {
-      background: rgba(16, 6, 159, 0.97);
-      box-shadow: 0 4px 20px rgba(16,6,159,0.25);
+      background: rgba(26,60,94,0.97);
       -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-md);
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
+      height: var(--header-h);
     }
 
     .logo {
@@ -181,7 +203,8 @@
     .logo-icon {
       width: 36px;
       height: 36px;
-      background: var(--white);
+      flex-shrink: 0;
+      background: var(--accent);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -205,14 +228,14 @@
       transition: color var(--transition);
     }
 
-    .nav-links a::after {
+    .nav-links a:not(.btn)::after {
       content: '';
       position: absolute;
       bottom: -4px;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--white);
+      background: var(--accent);
       transition: width var(--transition);
     }
 
@@ -221,38 +244,27 @@
       color: var(--white);
     }
 
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
+    .nav-links a:not(.btn):hover::after,
+    .nav-links a:not(.btn).active::after {
       width: 100%;
     }
 
-    .header-phone {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--white);
-      color: var(--primary);
-      padding: 10px 20px;
-      border-radius: var(--radius);
-      font-weight: 700;
-      font-size: 0.92rem;
-      transition: all var(--transition);
-    }
-
-    .header-phone:hover {
-      background: var(--gray-100);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    .nav-call {
+      padding: 10px 22px;
+      font-size: 0.88rem;
     }
 
     .hamburger {
       display: none;
       flex-direction: column;
+      justify-content: center;
       gap: 5px;
+      width: 40px;
+      height: 40px;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 4px;
+      padding: 8px;
     }
 
     .hamburger span {
@@ -261,7 +273,7 @@
       height: 2px;
       background: var(--white);
       border-radius: 2px;
-      transition: all var(--transition);
+      transition: transform var(--transition), opacity var(--transition);
     }
 
     .hamburger.active span:nth-child(1) {
@@ -280,22 +292,30 @@
       min-height: 92vh;
       display: flex;
       align-items: center;
-      /* Blue overlay + background image */
-      background:
-        linear-gradient(135deg, rgba(16, 6, 159, 0.90) 0%, rgba(12, 5, 120, 0.88) 55%, rgba(26, 11, 184, 0.85) 100%),
-        url('background.png') center center / cover no-repeat;
+      padding-top: var(--header-h);
       overflow: hidden;
-      padding-top: 72px;
+      /* Solid fallback colour + dark scrim so the text is always readable,
+         even if background.png is missing or is a light image. */
+      background-color: #12293f;
+      background-image:
+        linear-gradient(135deg,
+          rgba(15,36,56,0.94) 0%,
+          rgba(26,60,94,0.80) 55%,
+          rgba(15,36,56,0.92) 100%),
+        url('background.png');
+      background-size: cover, cover;
+      background-position: center, center;
+      background-repeat: no-repeat, no-repeat;
     }
 
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 55%),
-        radial-gradient(circle at 15% 85%, rgba(255,255,255,0.06) 0%, transparent 50%);
       pointer-events: none;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(232,168,56,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.06) 0%, transparent 50%);
     }
 
     .hero-content {
@@ -309,9 +329,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255,255,255,0.14);
-      border: 1px solid rgba(255,255,255,0.32);
-      color: var(--white);
+      background: rgba(232,168,56,0.15);
+      border: 1px solid rgba(232,168,56,0.35);
+      color: var(--accent);
       padding: 6px 16px;
       border-radius: 50px;
       font-size: 0.82rem;
@@ -319,8 +339,6 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       margin-bottom: 24px;
-      -webkit-backdrop-filter: blur(4px);
-      backdrop-filter: blur(4px);
     }
 
     .hero h1 {
@@ -330,19 +348,17 @@
       font-weight: 800;
       margin-bottom: 20px;
       letter-spacing: -0.02em;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.18);
     }
 
     .hero h1 span {
-      color: #b8b4ff;
+      color: var(--accent);
     }
 
     .hero p {
       font-size: 1.1rem;
-      color: rgba(255,255,255,0.92);
+      color: rgba(255,255,255,0.82);
       margin-bottom: 36px;
       max-width: 540px;
-      text-shadow: 0 1px 12px rgba(0,0,0,0.15);
     }
 
     .hero-actions {
@@ -356,25 +372,25 @@
       gap: 40px;
       margin-top: 48px;
       padding-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.20);
+      border-top: 1px solid rgba(255,255,255,0.12);
     }
 
-    .hero-stat h3 {
+    .hero-stat-value {
       font-size: 1.8rem;
-      color: var(--white);
+      line-height: 1.2;
+      color: var(--accent);
       font-weight: 800;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.18);
     }
 
-    .hero-stat p {
+    .hero-stat-label {
       font-size: 0.85rem;
-      color: rgba(255,255,255,0.80);
-      margin: 0;
+      color: rgba(255,255,255,0.65);
     }
 
     /* ===== SECTION BASICS ===== */
     .section {
       padding: 90px 0;
+      scroll-margin-top: calc(var(--header-h) + 8px);
     }
 
     .section-alt {
@@ -391,9 +407,9 @@
       display: inline-block;
       font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--primary);
+      color: #a8700f; /* darker gold for AA contrast on light backgrounds */
       margin-bottom: 12px;
     }
 
@@ -424,7 +440,7 @@
       padding: 36px 28px;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--gray-200);
-      transition: all var(--transition);
+      transition: transform var(--transition), box-shadow var(--transition);
       position: relative;
       overflow: hidden;
     }
@@ -436,7 +452,7 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: var(--primary);
+      background: var(--accent);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform var(--transition);
@@ -445,7 +461,6 @@
     .service-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-lg);
-      border-color: rgba(16,6,159,0.25);
     }
 
     .service-card:hover::before {
@@ -466,13 +481,13 @@
     }
 
     .service-card:hover .service-icon {
-      background: rgba(16,6,159,0.09);
+      background: rgba(232,168,56,0.12);
     }
 
     .service-card h3 {
       font-size: 1.15rem;
       font-weight: 700;
-      color: var(--gray-700);
+      color: var(--primary);
       margin-bottom: 10px;
     }
 
@@ -495,16 +510,14 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
       box-shadow: var(--shadow-lg);
-      aspect-ratio: 4/3;
+      aspect-ratio: 4 / 3;
       background: var(--gray-200);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .about-image-placeholder {
-      font-size: 4rem;
-      opacity: 0.3;
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .about-content h2 {
@@ -539,13 +552,13 @@
       flex-shrink: 0;
       width: 22px;
       height: 22px;
-      background: var(--primary);
+      background: var(--accent);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.7rem;
-      color: var(--white);
+      color: var(--dark);
       font-weight: 800;
       margin-top: 2px;
     }
@@ -576,18 +589,17 @@
       padding: 32px 28px;
       box-shadow: var(--shadow-sm);
       border: 1px solid var(--gray-200);
-      transition: all var(--transition);
+      transition: transform var(--transition), box-shadow var(--transition);
       position: relative;
     }
 
     .testimonial-card:hover {
       box-shadow: var(--shadow-md);
       transform: translateY(-3px);
-      border-color: rgba(16,6,159,0.25);
     }
 
     .testimonial-stars {
-      color: var(--primary);
+      color: var(--accent);
       font-size: 1rem;
       letter-spacing: 2px;
       margin-bottom: 16px;
@@ -610,6 +622,7 @@
     .testimonial-avatar {
       width: 44px;
       height: 44px;
+      flex-shrink: 0;
       border-radius: 50%;
       background: var(--primary);
       color: var(--white);
@@ -634,7 +647,7 @@
 
     /* ===== CTA BANNER ===== */
     .cta-banner {
-      background: linear-gradient(135deg, #10069f 0%, #0c0578 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       padding: 80px 0;
       text-align: center;
       position: relative;
@@ -645,7 +658,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 70% 40%, rgba(255,255,255,0.10) 0%, transparent 60%);
+      pointer-events: none;
+      background: radial-gradient(circle at 70% 40%, rgba(232,168,56,0.15) 0%, transparent 60%);
     }
 
     .cta-banner .container {
@@ -662,12 +676,10 @@
     }
 
     .cta-banner p {
-      color: rgba(255,255,255,0.85);
+      color: rgba(255,255,255,0.8);
       font-size: 1.05rem;
-      margin-bottom: 32px;
+      margin: 0 auto 32px;
       max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     /* ===== CONTACT ===== */
@@ -702,7 +714,7 @@
       flex-shrink: 0;
       width: 48px;
       height: 48px;
-      background: rgba(16,6,159,0.08);
+      background: var(--gray-100);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -728,7 +740,7 @@
     }
 
     .contact-detail a:hover {
-      color: var(--primary);
+      color: var(--accent-hover);
     }
 
     .contact-form {
@@ -787,14 +799,21 @@
       background: var(--white);
       transition: border-color var(--transition), box-shadow var(--transition);
       -webkit-appearance: none;
+      appearance: none;
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(16,6,159,0.12);
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 3px rgba(42,90,138,0.12);
+    }
+
+    .form-group input[aria-invalid="true"],
+    .form-group textarea[aria-invalid="true"] {
+      border-color: #dc2626;
+      box-shadow: 0 0 0 3px rgba(220,38,38,0.1);
     }
 
     .form-group textarea {
@@ -841,8 +860,8 @@
 
     /* ===== FOOTER ===== */
     .site-footer {
-      background: #0c0578;
-      color: rgba(255,255,255,0.75);
+      background: #0f2438;
+      color: rgba(255,255,255,0.7);
       padding: 60px 0 0;
     }
 
@@ -851,16 +870,11 @@
       grid-template-columns: 1.5fr 1fr 1fr;
       gap: 48px;
       padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .footer-brand .logo {
       margin-bottom: 16px;
-    }
-
-    .footer-brand .logo-icon {
-      background: var(--white);
-      color: var(--primary);
     }
 
     .footer-brand p {
@@ -888,7 +902,7 @@
     }
 
     .footer-col a:hover {
-      color: var(--white);
+      color: var(--accent);
     }
 
     .footer-bottom {
@@ -896,8 +910,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 8px;
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.45);
     }
 
     /* ===== ANIMATIONS ===== */
@@ -914,11 +929,7 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 992px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
+      .about-grid,
       .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -932,51 +943,59 @@
     @media (max-width: 768px) {
       .nav-links {
         position: fixed;
-        top: 72px;
+        top: var(--header-h);
         left: 0;
         right: 0;
-        background: #10069f;
+        background: var(--primary);
         flex-direction: column;
-        padding: 24px 20px 32px;
-        gap: 4px;
+        align-items: stretch;
+        padding: 16px 20px 28px;
+        gap: 0;
         transform: translateY(-120%);
         opacity: 0;
+        visibility: hidden;
         pointer-events: none;
-        transition: all 0.35s ease;
+        transition: transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
         box-shadow: var(--shadow-lg);
-        border-top: 1px solid rgba(255,255,255,0.10);
+        border-top: 1px solid rgba(255,255,255,0.08);
+        max-height: calc(100vh - var(--header-h));
+        overflow-y: auto;
       }
 
       .nav-links.open {
         transform: translateY(0);
         opacity: 1;
-        pointer-events: all;
+        visibility: visible;
+        pointer-events: auto;
       }
 
       .nav-links a {
         display: block;
         padding: 14px 0;
         font-size: 1rem;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
       }
 
-      .nav-links a::after {
+      .nav-links a:not(.btn)::after {
         display: none;
+      }
+
+      .nav-links a.btn {
+        display: block;
+        width: 100%;
+        margin-top: 18px;
+        border-bottom: none;
       }
 
       .hamburger {
         display: flex;
       }
 
-      .header-phone {
-        display: none;
-      }
-
       .hero-stats {
         gap: 24px;
       }
 
-      .hero-stat h3 {
+      .hero-stat-value {
         font-size: 1.4rem;
       }
 
@@ -995,7 +1014,6 @@
 
       .footer-bottom {
         flex-direction: column;
-        gap: 8px;
         text-align: center;
       }
     }
@@ -1018,14 +1036,45 @@
         padding: 64px 0;
       }
     }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .fade-up {
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
+
+  <!-- If JavaScript is unavailable, make sure the animated content is still visible -->
+  <noscript>
+    <style>
+      .fade-up { opacity: 1 !important; transform: none !important; }
+      .nav-links { position: static; transform: none; opacity: 1; visibility: visible; pointer-events: auto; }
+    </style>
+  </noscript>
 </head>
 <body>
+
+  <a href="#main" class="sr-only">Skip to main content</a>
 
   <!-- ===== HEADER ===== -->
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="The Flooring Company home">
+      <a href="#home" class="logo" aria-label="The Flooring Company — home">
         <span class="logo-icon" aria-hidden="true">TF</span>
         <span>The Flooring Company</span>
       </a>
@@ -1036,15 +1085,12 @@
         <a href="#about">About Us</a>
         <a href="#testimonials">Reviews</a>
         <a href="#contact">Contact</a>
-        <a href="tel:021791555" class="btn btn-white" style="padding:10px 22px;font-size:0.88rem;margin-top:8px;">Call 021 791 555</a>
+        <a href="tel:021791555" class="btn btn-primary nav-call">Call 021 791 555</a>
       </nav>
 
-      <a href="tel:021791555" class="header-phone" aria-label="Call us">
-        <span aria-hidden="true">📞</span>
-        <span>021 791 555</span>
-      </a>
-
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <button class="hamburger" id="hamburger" type="button"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false" aria-controls="navLinks">
         <span></span>
         <span></span>
         <span></span>
@@ -1052,295 +1098,305 @@
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-content fade-up">
-        <span class="hero-badge">⭐ Auckland Wide Service</span>
-        <h1>Premium Flooring <span>Supply & Installation</span> You Can Trust</h1>
-        <p>
-          Professional flooring solutions for residential and commercial spaces across Auckland.
-          From carpet and vinyl to floor prep — we deliver results that look great and last for years.
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-white btn-lg">Get a Free Quote</a>
-          <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <h3>16+</h3>
-            <p>Years Experience</p>
-          </div>
-          <div class="hero-stat">
-            <h3>500+</h3>
-            <p>Projects Completed</p>
-          </div>
-          <div class="hero-stat">
-            <h3>100%</h3>
-            <p>Satisfaction Focused</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <main id="main">
 
-  <!-- ===== SERVICES ===== -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-label">What We Do</span>
-        <h2>Flooring Solutions for Every Space</h2>
-        <p>We supply and install a wide range of flooring options, tailored to your home or business.</p>
-      </div>
-
-      <div class="services-grid">
-        <article class="service-card fade-up">
-          <div class="service-icon" aria-hidden="true">🧶</div>
-          <h3>Classic Carpet</h3>
-          <p>Keeping your feet toasty warm and soft underfoot, while providing insulation and sound proofing. Perfect for bedrooms and living areas.</p>
-        </article>
-
-        <article class="service-card fade-up">
-          <div class="service-icon" aria-hidden="true">🔲</div>
-          <h3>Carpet Tiles</h3>
-          <p>Versatile carpet tiles are great for commercial spaces. Especially hardwearing and easy to spot repair as needed.</p>
-        </article>
-
-        <article class="service-card fade-up">
-          <div class="service-icon" aria-hidden="true">🛠️</div>
-          <h3>Floor Preparation</h3>
-          <p>Preparing your sub-floor is an important step in the installation process. Includes diamond grinding, skim coats, and floor levelling.</p>
-        </article>
-
-        <article class="service-card fade-up">
-          <div class="service-icon" aria-hidden="true">🏠</div>
-          <h3>Garage Carpet</h3>
-          <p>Transform your garage into a usable, comfortable space with durable garage carpet installation.</p>
-        </article>
-
-        <article class="service-card fade-up">
-          <div class="service-icon" aria-hidden="true">🪵</div>
-          <h3>Vinyl Wood Planking</h3>
-          <p>Get the look of timber with the durability and low maintenance of vinyl. Ideal for high-traffic areas.</p>
-        </article>
-
-        <article class="service-card fade-up">
-          <div class="service-icon" aria-hidden="true">🏢</div>
-          <h3>Commercial Flooring</h3>
-          <p>Supply and installation for commercial premises, from offices to retail spaces. Built to withstand heavy use.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ABOUT ===== -->
-  <section class="section section-alt" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image fade-up">
-          <div class="about-image-placeholder" aria-hidden="true">🏗️</div>
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='450'%3E%3Crect fill='%23e8e8e8' width='600' height='450'/%3E%3Ctext x='50%25' y='50%25' fill='%23949494' font-family='sans-serif' font-size='48' text-anchor='middle' dy='.3em'%3EProject Photo%3C/text%3E%3C/svg%3E" alt="The Flooring Company project" style="position:absolute;inset:0;object-fit:cover;">
-        </div>
-
-        <div class="about-content fade-up">
-          <span class="section-label">About Us</span>
-          <h2>Experienced, Reliable, and Committed to Excellence</h2>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content fade-up">
+          <span class="hero-badge">⭐ Auckland Wide Service</span>
+          <h1>Premium Flooring <span>Supply &amp; Installation</span> You Can Trust</h1>
           <p>
-            Based in Auckland, our experienced team at The Flooring Company is committed to excellence
-            in customer service, achieving outstanding results, and completing projects to the highest standards.
+            Professional flooring solutions for residential and commercial spaces across Auckland.
+            From carpet and vinyl to floor prep — we deliver results that look great and last for years.
           </p>
-
-          <ul class="about-list">
-            <li>
-              <span class="check" aria-hidden="true">✓</span>
-              <div>
-                <strong>16+ Years of Industry Experience</strong>
-                <p>Led by Daniel Leggett, who has subcontracted to major flooring partners including Harrison's Carpet One, Flooring Xtra, and Flooring Vision.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check" aria-hidden="true">✓</span>
-              <div>
-                <strong>Exceptional Attention to Detail</strong>
-                <p>All installations are completed to the highest standard with exceptional workmanship — so your flooring looks good now and for years to come.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check" aria-hidden="true">✓</span>
-              <div>
-                <strong>Tailored Solutions</strong>
-                <p>Whatever your project, we'll find the right solution for the right price. No job is too big or too small.</p>
-              </div>
-            </li>
-          </ul>
-
-          <a href="#contact" class="btn btn-primary">Get in Touch</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== TESTIMONIALS ===== -->
-  <section class="section" id="testimonials">
-    <div class="container">
-      <div class="section-header fade-up">
-        <span class="section-label">Testimonials</span>
-        <h2>What Our Clients Say</h2>
-        <p>Don't just take our word for it — here's what Auckland homeowners and businesses have to say.</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <article class="testimonial-card fade-up">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>
-            "Daniel and his team did an incredible job on our new carpet. Professional, punctual, and the finish is flawless. Highly recommend!"
-          </blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">SM</div>
-            <div>
-              <h4>Sarah M.</h4>
-              <p>Residential Client, Ponsonby</p>
-            </div>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary btn-lg">Get a Free Quote</a>
+            <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
           </div>
-        </article>
-
-        <article class="testimonial-card fade-up">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>
-            "We had carpet tiles installed across our office. The team was efficient and the result looks fantastic. Great value for money."
-          </blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">JT</div>
-            <div>
-              <h4>James T.</h4>
-              <p>Commercial Client, CBD</p>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <p class="hero-stat-value">16+</p>
+              <p class="hero-stat-label">Years Experience</p>
             </div>
-          </div>
-        </article>
-
-        <article class="testimonial-card fade-up">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <blockquote>
-            "The floor prep work was exceptional — you can tell they really care about the details. Our vinyl plank flooring looks amazing."
-          </blockquote>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">RL</div>
-            <div>
-              <h4>Rachel L.</h4>
-              <p>Homeowner, Devonport</p>
+            <div class="hero-stat">
+              <p class="hero-stat-value">500+</p>
+              <p class="hero-stat-label">Projects Completed</p>
             </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA BANNER ===== -->
-  <section class="cta-banner">
-    <div class="container fade-up">
-      <h2>Ready to Transform Your Space?</h2>
-      <p>Get a free, no-obligation quote for your flooring project today. We'll help you find the perfect solution.</p>
-      <a href="#contact" class="btn btn-white btn-lg">Request Your Free Quote</a>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="section section-alt" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info fade-up">
-          <span class="section-label">Get in Touch</span>
-          <h2>We love new projects. Let's get started!</h2>
-          <p>Whether you have a question or you're ready to book a consultation, we'd love to hear from you.</p>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon" aria-hidden="true">👤</div>
-            <div>
-              <h4>Contact Person</h4>
-              <p>Daniel Leggett</p>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon" aria-hidden="true">📞</div>
-            <div>
-              <h4>Mobile</h4>
-              <a href="tel:021791555">021 791 555</a>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon" aria-hidden="true">📍</div>
-            <div>
-              <h4>Service Area</h4>
-              <p>Auckland Wide</p>
-            </div>
-          </div>
-
-          <div class="contact-detail">
-            <div class="contact-detail-icon" aria-hidden="true">🕐</div>
-            <div>
-              <h4>Hours</h4>
-              <p>Mon–Sat: 7:00am – 6:00pm</p>
+            <div class="hero-stat">
+              <p class="hero-stat-value">100%</p>
+              <p class="hero-stat-label">Satisfaction Focused</p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="contact-form fade-up">
-          <h3>Request a Free Quote</h3>
-          <p>Fill in the form below and we'll get back to you within 24 hours.</p>
+    <!-- ===== SERVICES ===== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">What We Do</span>
+          <h2>Flooring Solutions for Every Space</h2>
+          <p>We supply and install a wide range of flooring options, tailored to your home or business.</p>
+        </div>
 
-          <form id="quoteForm" novalidate>
-            <div class="form-row">
+        <div class="services-grid">
+          <article class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">🧶</div>
+            <h3>Classic Carpet</h3>
+            <p>Keeping your feet toasty warm and soft underfoot, while providing insulation and sound proofing. Perfect for bedrooms and living areas.</p>
+          </article>
+
+          <article class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">🔲</div>
+            <h3>Carpet Tiles</h3>
+            <p>Versatile carpet tiles are great for commercial spaces. Especially hardwearing and easy to spot repair as needed.</p>
+          </article>
+
+          <article class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">🛠️</div>
+            <h3>Floor Preparation</h3>
+            <p>Preparing your sub-floor is an important step in the installation process. Includes diamond grinding, skim coats, and floor levelling.</p>
+          </article>
+
+          <article class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">🏠</div>
+            <h3>Garage Carpet</h3>
+            <p>Transform your garage into a usable, comfortable space with durable garage carpet installation.</p>
+          </article>
+
+          <article class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">🪵</div>
+            <h3>Vinyl Wood Planking</h3>
+            <p>Get the look of timber with the durability and low maintenance of vinyl. Ideal for high-traffic areas.</p>
+          </article>
+
+          <article class="service-card fade-up">
+            <div class="service-icon" aria-hidden="true">🏢</div>
+            <h3>Commercial Flooring</h3>
+            <p>Supply and installation for commercial premises, from offices to retail spaces. Built to withstand heavy use.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section section-alt" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image fade-up">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='450'%3E%3Crect fill='%23eef0f3' width='600' height='450'/%3E%3Ctext x='50%25' y='50%25' fill='%23b9c0cb' font-family='sans-serif' font-size='34' text-anchor='middle' dy='.3em'%3EProject Photo%3C/text%3E%3C/svg%3E"
+              alt="Recently completed flooring installation by The Flooring Company in Auckland"
+              width="600" height="450" loading="lazy" decoding="async">
+          </div>
+
+          <div class="about-content fade-up">
+            <span class="section-label">About Us</span>
+            <h2>Experienced, Reliable, and Committed to Excellence</h2>
+            <p>
+              Based in Auckland, our experienced team at The Flooring Company is committed to excellence
+              in customer service, achieving outstanding results, and completing projects to the highest standards.
+            </p>
+
+            <ul class="about-list">
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <div>
+                  <strong>16+ Years of Industry Experience</strong>
+                  <p>Led by Daniel Leggett, who has subcontracted to major flooring partners including Harrison's Carpet One, Flooring Xtra, and Flooring Vision.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <div>
+                  <strong>Exceptional Attention to Detail</strong>
+                  <p>All installations are completed to the highest standard with exceptional workmanship — so your flooring looks good now and for years to come.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check" aria-hidden="true">✓</span>
+                <div>
+                  <strong>Tailored Solutions</strong>
+                  <p>Whatever your project, we'll find the right solution for the right price. No job is too big or too small.</p>
+                </div>
+              </li>
+            </ul>
+
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Testimonials</span>
+          <h2>What Our Clients Say</h2>
+          <p>Don't just take our word for it — here's what Auckland homeowners and businesses have to say.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <article class="testimonial-card fade-up">
+            <p class="testimonial-stars" aria-label="Rated 5 out of 5 stars">★★★★★</p>
+            <blockquote>
+              "Daniel and his team did an incredible job on our new carpet. Professional, punctual, and the finish is flawless. Highly recommend!"
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">SM</div>
+              <div>
+                <h4>Sarah M.</h4>
+                <p>Residential Client, Ponsonby</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card fade-up">
+            <p class="testimonial-stars" aria-label="Rated 5 out of 5 stars">★★★★★</p>
+            <blockquote>
+              "We had carpet tiles installed across our office. The team was efficient and the result looks fantastic. Great value for money."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">JT</div>
+              <div>
+                <h4>James T.</h4>
+                <p>Commercial Client, CBD</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card fade-up">
+            <p class="testimonial-stars" aria-label="Rated 5 out of 5 stars">★★★★★</p>
+            <blockquote>
+              "The floor prep work was exceptional — you can tell they really care about the details. Our vinyl plank flooring looks amazing."
+            </blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">RL</div>
+              <div>
+                <h4>Rachel L.</h4>
+                <p>Homeowner, Devonport</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+      <div class="container fade-up">
+        <h2>Ready to Transform Your Space?</h2>
+        <p>Get a free, no-obligation quote for your flooring project today. We'll help you find the perfect solution.</p>
+        <a href="#contact" class="btn btn-primary btn-lg">Request Your Free Quote</a>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info fade-up">
+            <span class="section-label">Get in Touch</span>
+            <h2>We love new projects. Let's get started!</h2>
+            <p>Whether you have a question or you're ready to book a consultation, we'd love to hear from you.</p>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">👤</div>
+              <div>
+                <h4>Contact Person</h4>
+                <p>Daniel Leggett</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">📞</div>
+              <div>
+                <h4>Mobile</h4>
+                <a href="tel:021791555">021 791 555</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">📍</div>
+              <div>
+                <h4>Service Area</h4>
+                <p>Auckland Wide</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon" aria-hidden="true">🕐</div>
+              <div>
+                <h4>Hours</h4>
+                <p>Mon–Sat: 7:00am – 6:00pm</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form fade-up">
+            <h3>Request a Free Quote</h3>
+            <p>Fill in the form below and we'll get back to you within 24 hours.</p>
+
+            <form id="quoteForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Full Name <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="name" name="name" placeholder="Your name"
+                         autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number <span class="required" aria-hidden="true">*</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="021 123 4567"
+                         autocomplete="tel" inputmode="tel" required>
+                </div>
+              </div>
+
               <div class="form-group">
-                <label for="name">Full Name <span class="required">*</span></label>
-                <input type="text" id="name" name="name" placeholder="Your name" required>
+                <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" placeholder="you@example.com"
+                       autocomplete="email" inputmode="email" required>
               </div>
+
               <div class="form-group">
-                <label for="phone">Phone Number <span class="required">*</span></label>
-                <input type="tel" id="phone" name="phone" placeholder="021 123 4567" required>
+                <label for="service">Service Interested In</label>
+                <select id="service" name="service">
+                  <option value="">Select a service...</option>
+                  <option value="carpet">Classic Carpet</option>
+                  <option value="carpet-tiles">Carpet Tiles</option>
+                  <option value="floor-prep">Floor Preparation</option>
+                  <option value="garage-carpet">Garage Carpet</option>
+                  <option value="vinyl">Vinyl Wood Planking</option>
+                  <option value="commercial">Commercial Flooring</option>
+                  <option value="other">Other / Not Sure</option>
+                </select>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="email">Email Address <span class="required">*</span></label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required>
-            </div>
+              <div class="form-group">
+                <label for="message">Project Details</label>
+                <textarea id="message" name="message"
+                          placeholder="Tell us about your project — approximate size, timeline, etc."></textarea>
+              </div>
 
-            <div class="form-group">
-              <label for="service">Service Interested In</label>
-              <select id="service" name="service">
-                <option value="">Select a service...</option>
-                <option value="carpet">Classic Carpet</option>
-                <option value="carpet-tiles">Carpet Tiles</option>
-                <option value="floor-prep">Floor Preparation</option>
-                <option value="garage-carpet">Garage Carpet</option>
-                <option value="vinyl">Vinyl Wood Planking</option>
-                <option value="commercial">Commercial Flooring</option>
-                <option value="other">Other / Not Sure</option>
-              </select>
-            </div>
+              <button type="submit" class="btn btn-primary form-submit">Send Message</button>
 
-            <div class="form-group">
-              <label for="message">Project Details</label>
-              <textarea id="message" name="message" placeholder="Tell us about your project — approximate size, timeline, etc."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
-
-            <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
-          </form>
+              <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#" class="logo">
+          <a href="#home" class="logo" aria-label="The Flooring Company — home">
             <span class="logo-icon" aria-hidden="true">TF</span>
             <span>The Flooring Company</span>
           </a>
@@ -1380,69 +1436,106 @@
     (function () {
       'use strict';
 
-      /* --- Sticky Header --- */
-      var header = document.getElementById('siteHeader');
+      var byId = function (id) { return document.getElementById(id); };
+      var prefersReducedMotion = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      window.addEventListener('scroll', function () {
-        var scrollY = window.scrollY;
-        header.classList.toggle('scrolled', scrollY > 20);
-      }, { passive: true });
+      /* ---------- Sticky Header ---------- */
+      var header = byId('siteHeader');
 
-      /* --- Mobile Menu --- */
-      var hamburger = document.getElementById('hamburger');
-      var navLinks = document.getElementById('navLinks');
+      var onScroll = function () {
+        header.classList.toggle('scrolled', window.scrollY > 20);
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* ---------- Mobile Menu ---------- */
+      var hamburger = byId('hamburger');
+      var navLinks = byId('navLinks');
+
+      function closeMenu() {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+
+      function openMenu() {
+        navLinks.classList.add('open');
+        hamburger.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
 
       hamburger.addEventListener('click', function () {
-        var isOpen = navLinks.classList.toggle('open');
-        hamburger.classList.toggle('active', isOpen);
-        hamburger.setAttribute('aria-expanded', String(isOpen));
+        if (navLinks.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
       });
 
-      /* Close menu when a link is clicked */
+      /* Close menu when a link is tapped */
       navLinks.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          navLinks.classList.remove('open');
-          hamburger.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', closeMenu);
       });
 
       /* Close menu on Escape */
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && navLinks.classList.contains('open')) {
-          navLinks.classList.remove('open');
-          hamburger.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', 'false');
+          closeMenu();
           hamburger.focus();
         }
       });
 
-      /* --- Active Nav Link on Scroll --- */
-      var sections = document.querySelectorAll('section[id]');
-      var navAnchors = navLinks.querySelectorAll('a[href^="#"]');
+      /* Close menu if the viewport is resized back to desktop */
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) closeMenu();
+      });
+
+      /* ---------- Active Nav Link on Scroll ---------- */
+      var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+      var navAnchors = Array.prototype.slice.call(navLinks.querySelectorAll('a[href^="#"]'));
 
       function updateActiveLink() {
-        var scrollPos = window.scrollY + 120;
+        var scrollPos = window.scrollY + header.offsetHeight + 40;
+        var currentId = null;
 
         sections.forEach(function (section) {
-          var top = section.offsetTop;
-          var height = section.offsetHeight;
-          var id = section.getAttribute('id');
-
-          if (scrollPos >= top && scrollPos < top + height) {
-            navAnchors.forEach(function (a) {
-              a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-            });
+          if (scrollPos >= section.offsetTop &&
+              scrollPos < section.offsetTop + section.offsetHeight) {
+            currentId = section.id;
           }
+        });
+
+        /* If we're at the very bottom, highlight the last section */
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
+          currentId = sections[sections.length - 1].id;
+        }
+
+        if (!currentId) return;
+
+        navAnchors.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
         });
       }
 
-      window.addEventListener('scroll', updateActiveLink, { passive: true });
+      /* Throttle with requestAnimationFrame so we don't thrash the layout */
+      var ticking = false;
+      window.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(function () {
+          updateActiveLink();
+          ticking = false;
+        });
+      }, { passive: true });
 
-      /* --- Intersection Observer for Fade-Up Animations --- */
+      updateActiveLink();
+
+      /* ---------- Fade-Up Animations ---------- */
       var fadeElements = document.querySelectorAll('.fade-up');
 
-      if ('IntersectionObserver' in window) {
+      if ('IntersectionObserver' in window && !prefersReducedMotion) {
         var observer = new IntersectionObserver(
           function (entries) {
             entries.forEach(function (entry) {
@@ -1455,85 +1548,131 @@
           { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
         );
 
-        fadeElements.forEach(function (el) {
-          observer.observe(el);
-        });
+        fadeElements.forEach(function (el) { observer.observe(el); });
       } else {
-        fadeElements.forEach(function (el) {
-          el.classList.add('visible');
-        });
+        /* Fallback for older browsers / reduced motion */
+        fadeElements.forEach(function (el) { el.classList.add('visible'); });
       }
 
-      /* --- Contact Form Validation --- */
-      var form = document.getElementById('quoteForm');
-      var formMessage = document.getElementById('formMessage');
+      /* ---------- Contact Form ---------- */
+      var form = byId('quoteForm');
+      var formMessage = byId('formMessage');
+
+      var nameInput  = byId('name');
+      var phoneInput = byId('phone');
+      var emailInput = byId('email');
+      var serviceInput = byId('service');
+      var messageInput = byId('message');
+
+      var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      var PHONE_RE = /^[\d\s+\-()]{7,20}$/;
+
+      function clearMessage() {
+        formMessage.className = 'form-message';
+        formMessage.textContent = '';
+      }
+
+      function markInvalid(input, invalid) {
+        if (invalid) {
+          input.setAttribute('aria-invalid', 'true');
+        } else {
+          input.removeAttribute('aria-invalid');
+        }
+      }
+
+      /* Clear the error state as soon as the user starts fixing it */
+      [nameInput, phoneInput, emailInput].forEach(function (input) {
+        input.addEventListener('input', function () {
+          markInvalid(input, false);
+          if (formMessage.classList.contains('error')) clearMessage();
+        });
+      });
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        clearMessage();
 
-        var name = form.name.value.trim();
-        var phone = form.phone.value.trim();
-        var email = form.email.value.trim();
-
-        formMessage.className = 'form-message';
-        formMessage.textContent = '';
+        var name    = nameInput.value.trim();
+        var phone   = phoneInput.value.trim();
+        var email   = emailInput.value.trim();
+        var service = serviceInput.value;
+        var message = messageInput.value.trim();
 
         var errors = [];
 
-        if (!name) {
-          errors.push('Please enter your name.');
-        }
+        var nameBad  = !name;
+        var phoneBad = !phone || !PHONE_RE.test(phone);
+        var emailBad = !email || !EMAIL_RE.test(email);
 
+        markInvalid(nameInput, nameBad);
+        markInvalid(phoneInput, phoneBad);
+        markInvalid(emailInput, emailBad);
+
+        if (nameBad)  errors.push('Please enter your name.');
         if (!phone) {
           errors.push('Please enter your phone number.');
-        } else if (!/^[\d\s\+\-\(\)]{7,20}$/.test(phone)) {
+        } else if (phoneBad) {
           errors.push('Please enter a valid phone number.');
         }
-
         if (!email) {
           errors.push('Please enter your email address.');
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        } else if (emailBad) {
           errors.push('Please enter a valid email address.');
         }
 
         if (errors.length > 0) {
           formMessage.className = 'form-message error';
-          formMessage.innerHTML = errors.join('<br>');
+          formMessage.textContent = errors.join(' ');
+
+          var firstInvalid = form.querySelector('[aria-invalid="true"]');
+          if (firstInvalid) firstInvalid.focus();
           return;
         }
 
+        /* --- In production, POST the data to your backend here, e.g.:
+           fetch('/api/quote', {
+             method: 'POST',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify({ name, phone, email, service, message })
+           })
+           .then(function (res) { ... })
+           .catch(function () { ... });
+        --- */
+
         formMessage.className = 'form-message success';
-        formMessage.innerHTML = '✅ Thank you, ' + name + '! We\'ll be in touch within 24 hours.';
+        formMessage.textContent = 'Thank you, ' + name + '! We\'ll be in touch within 24 hours.';
 
         form.reset();
 
-        setTimeout(function () {
-          formMessage.className = 'form-message';
-          formMessage.textContent = '';
-        }, 6000);
+        window.setTimeout(clearMessage, 8000);
       });
 
-      /* --- Current Year in Footer --- */
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      /* ---------- Current Year in Footer ---------- */
+      byId('currentYear').textContent = new Date().getFullYear();
 
-      /* --- Smooth Scroll for Anchor Links (with header offset) --- */
+      /* ---------- Smooth Scroll with Header Offset ---------- */
       document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
           var targetId = this.getAttribute('href');
-          if (targetId === '#') return;
+          if (!targetId || targetId === '#') return;
 
           var target = document.querySelector(targetId);
           if (!target) return;
 
           e.preventDefault();
 
-          var headerHeight = header.offsetHeight;
-          var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+          var targetPosition = target.getBoundingClientRect().top +
+                               window.scrollY - header.offsetHeight;
 
           window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
+            top: Math.max(targetPosition, 0),
+            behavior: prefersReducedMotion ? 'auto' : 'smooth'
           });
+
+          /* Keep the URL in sync without an extra jump */
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, '', targetId);
+          }
         });
       });
 
