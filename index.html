@@ -1741,12 +1741,11 @@
         } catch (e) { /* ignore quota / privacy mode errors */ }
       }
 
-      /* Initial state: user choice > OS preference > default (animations on) */
+      /* Initial state: only an explicit user choice turns animations off.
+         Default is animations ON — the accessibility button is how users
+         opt out, and their choice is remembered. */
       var storedPref = readStoredPref();
-      var osPrefersReduce = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      var initialReduce = storedPref !== null ? storedPref : osPrefersReduce;
+      var initialReduce = storedPref !== null ? storedPref : false;
       applyMotionPref(initialReduce);
 
       /* Mark the button if the user has already made an explicit choice */
