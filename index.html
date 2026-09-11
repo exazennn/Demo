@@ -1,2387 +1,1544 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natural Tooth Dental Lab | معمل السن الطبيعي للاسنان</title>
-    <meta name="description" content="Natural Tooth Dental Lab - Premium dental laboratory in Abha, Saudi Arabia. Crowns, bridges, implants, and digital smile design with 5-star quality.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0D9488;
-            --primary-dark: #0F766E;
-            --primary-light: #14B8A6;
-            --cyan: #06B6D4;
-            --dark: #0F172A;
-            --dark-secondary: #1E293B;
-            --slate: #334155;
-            --gray: #64748B;
-            --light-gray: #94A3B8;
-            --bg-light: #F8FAFC;
-            --bg-white: #FFFFFF;
-            --gold: #F59E0B;
-            --gold-light: #FBBF24;
-            --gradient-primary: linear-gradient(135deg, #0D9488 0%, #06B6D4 100%);
-            --gradient-dark: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-            --gradient-hero: linear-gradient(135deg, rgba(13, 148, 136, 0.92) 0%, rgba(6, 182, 212, 0.85) 50%, rgba(15, 118, 110, 0.9) 100%);
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
-            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
-            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-spring: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-            --radius-sm: 8px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --radius-xl: 32px;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --font-display: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
-            --nav-height: 72px;
-        }
-
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            color: var(--dark);
-            background: var(--bg-white);
-            line-height: 1.6;
-            overflow-x: hidden;
-            font-size: 16px;
-        }
-
-        ::selection {
-            background: var(--primary);
-            color: white;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color var(--transition-fast);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 28px;
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 50px;
-            opacity: 0;
-            transition: opacity var(--transition-base);
-            pointer-events: none;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: 0 4px 16px rgba(13, 148, 136, 0.35);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(13, 148, 136, 0.5);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 8px rgba(13, 148, 136, 0.3);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 1.5px solid rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.6);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-secondary:active {
-            transform: translateY(0);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.3);
-        }
-
-        .btn-outline:active {
-            transform: translateY(0);
-        }
-
-        .btn-sm {
-            padding: 10px 20px;
-            font-size: 0.85rem;
-        }
-
-        .btn-lg {
-            padding: 16px 36px;
-            font-size: 1.05rem;
-        }
-
-        .btn .arrow {
-            display: inline-block;
-            transition: transform var(--transition-base);
-            font-size: 1.1em;
-            line-height: 1;
-        }
-
-        .btn:hover .arrow {
-            transform: translateX(4px);
-        }
-
-        /* ===== NAVIGATION ===== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            height: var(--nav-height);
-            display: flex;
-            align-items: center;
-            transition: all var(--transition-base);
-            background: transparent;
-            padding: 0;
-        }
-
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 4px 20px rgba(0, 0, 0, 0.06);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: white;
-            transition: color var(--transition-base);
-            letter-spacing: -0.02em;
-            text-decoration: none;
-            z-index: 1002;
-        }
-
-        .navbar.scrolled .nav-logo {
-            color: var(--dark);
-        }
-
-        .nav-logo .logo-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
-            transition: all var(--transition-base);
-        }
-
-        .nav-logo .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .nav-logo .logo-text .en {
-            font-size: 1.1rem;
-            font-weight: 700;
-        }
-
-        .nav-logo .logo-text .ar {
-            font-size: 0.7rem;
-            font-weight: 500;
-            opacity: 0.7;
-            letter-spacing: 0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            list-style: none;
-            transition: all var(--transition-base);
-        }
-
-        .nav-links a {
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.85);
-            transition: all var(--transition-fast);
-            position: relative;
-            letter-spacing: 0.01em;
-        }
-
-        .navbar.scrolled .nav-links a {
-            color: var(--dark-secondary);
-        }
-
-        .nav-links a:hover {
-            color: white;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .navbar.scrolled .nav-links a:hover {
-            color: var(--primary);
-            background: rgba(13, 148, 136, 0.08);
-        }
-
-        .nav-links a.active {
-            color: white;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .navbar.scrolled .nav-links a.active {
-            color: var(--primary);
-            background: rgba(13, 148, 136, 0.12);
-        }
-
-        /* Hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 8px;
-            z-index: 1002;
-            border: none;
-            background: transparent;
-            transition: all var(--transition-fast);
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 26px;
-            height: 2.5px;
-            background: white;
-            border-radius: 4px;
-            transition: all var(--transition-base);
-            transform-origin: center;
-        }
-
-        .navbar.scrolled .hamburger span {
-            background: var(--dark);
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: translateY(7.5px) rotate(45deg);
-            background: var(--dark);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: translateY(-7.5px) rotate(-45deg);
-            background: var(--dark);
-        }
-
-        /* Mobile Tray */
-        .mobile-tray {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 400px;
-            height: 100vh;
-            height: 100dvh;
-            background: white;
-            z-index: 1001;
-            transition: right var(--transition-slow);
-            box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-            padding: calc(var(--nav-height) + 20px) 32px 40px;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .mobile-tray.open {
-            right: 0;
-        }
-
-        .mobile-tray-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity var(--transition-base);
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .mobile-tray-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .mobile-tray .tray-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 24px;
-        }
-
-        .mobile-tray .tray-logo {
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .mobile-tray .tray-logo .logo-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-
-        .mobile-tray .tray-close {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: none;
-            background: var(--bg-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: all var(--transition-fast);
-            color: var(--dark);
-        }
-
-        .mobile-tray .tray-close:hover {
-            background: #e2e8f0;
-            transform: rotate(90deg);
-        }
-
-        .mobile-tray .tray-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            flex: 1;
-        }
-
-        .mobile-tray .tray-links a {
-            padding: 14px 16px;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--dark-secondary);
-            transition: all var(--transition-fast);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            letter-spacing: 0.01em;
-        }
-
-        .mobile-tray .tray-links a:hover {
-            background: rgba(13, 148, 136, 0.08);
-            color: var(--primary);
-            padding-left: 24px;
-        }
-
-        .mobile-tray .tray-links a .tray-arrow {
-            font-size: 0.8rem;
-            opacity: 0.4;
-            transition: all var(--transition-fast);
-        }
-
-        .mobile-tray .tray-links a:hover .tray-arrow {
-            opacity: 1;
-            transform: translateX(4px);
-        }
-
-        .mobile-tray .tray-footer {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid #e2e8f0;
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        .mobile-tray .tray-footer p {
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            min-height: 100vh;
-            min-height: 100dvh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: var(--gradient-hero);
-            overflow: hidden;
-            padding: calc(var(--nav-height) + 40px) 0 60px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 20% 50%, rgba(13, 148, 136, 0.6) 0%, transparent 60%),
-                radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.5) 0%, transparent 50%),
-                radial-gradient(ellipse at 60% 80%, rgba(15, 118, 110, 0.4) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-
-        .hero-content {
-            animation: fadeUp 0.8s ease-out forwards;
-        }
-
-        .hero-preheadline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.85);
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .hero-preheadline .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--gold-light);
-            animation: pulse 2s infinite;
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            color: white;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subheadline {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.7;
-            margin-bottom: 32px;
-            max-width: 520px;
-            font-weight: 400;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 36px;
-        }
-
-        .hero-social-proof {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .hero-social-proof .stars {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            color: var(--gold-light);
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-        }
-
-        .hero-social-proof .rating-text {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .hero-social-proof .divider {
-            width: 1px;
-            height: 24px;
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Hero Form */
-        .hero-form-wrapper {
-            animation: fadeUp 0.8s ease-out 0.2s forwards;
-            opacity: 0;
-        }
-
-        .hero-form-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: var(--radius-lg);
-            padding: 32px 28px;
-            box-shadow: var(--shadow-xl);
-        }
-
-        .hero-form-card .form-title {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 4px;
-        }
-
-        .hero-form-card .form-subtitle {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 14px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 6px;
-            letter-spacing: 0.03em;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border-radius: var(--radius-sm);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-family: var(--font-sans);
-            font-size: 0.9rem;
-            transition: all var(--transition-fast);
-            outline: none;
-            -webkit-appearance: none;
-            appearance: none;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: rgba(255, 255, 255, 0.6);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
-        }
-
-        .form-group select {
-            color: rgba(255, 255, 255, 0.8);
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 36px;
-            cursor: pointer;
-        }
-
-        .form-group select option {
-            color: var(--dark);
-            background: white;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 80px;
-            max-height: 160px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .form-submit-btn {
-            width: 100%;
-            padding: 14px;
-            border-radius: 50px;
-            border: none;
-            background: white;
-            color: var(--primary-dark);
-            font-weight: 700;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all var(--transition-base);
-            font-family: var(--font-sans);
-            letter-spacing: 0.02em;
-        }
-
-        .form-submit-btn:hover {
-            background: rgba(255, 255, 255, 0.9);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .form-submit-btn:active {
-            transform: translateY(0);
-        }
-
-        /* ===== SECTIONS COMMON ===== */
-        .section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 56px;
-        }
-
-        .section-tag {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 2.8rem);
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: var(--dark);
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .section-description {
-            font-size: 1.05rem;
-            color: var(--gray);
-            line-height: 1.7;
-        }
-
-        /* ===== SERVICES ===== */
-        .services {
-            background: var(--bg-light);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .service-card {
-            background: white;
-            border-radius: var(--radius-lg);
-            padding: 32px 28px;
-            box-shadow: var(--shadow-sm);
-            transition: all var(--transition-base);
-            border: 1px solid #f1f5f9;
-            position: relative;
-            overflow: hidden;
-            cursor: default;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            opacity: 0;
-            transition: opacity var(--transition-base);
-        }
-
-        .service-card:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-6px);
-            border-color: #e2e8f0;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            background: rgba(13, 148, 136, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            transition: all var(--transition-base);
-        }
-
-        .service-card:hover .service-icon {
-            background: var(--gradient-primary);
-            transform: scale(1.05);
-        }
-
-        .service-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 10px;
-            letter-spacing: -0.01em;
-        }
-
-        .service-card p {
-            font-size: 0.92rem;
-            color: var(--gray);
-            line-height: 1.65;
-            margin-bottom: 18px;
-        }
-
-        .service-card .btn {
-            font-size: 0.85rem;
-            padding: 8px 16px;
-        }
-
-        .services-footer {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        /* ===== WHY US / ABOUT ===== */
-        .why-us {
-            background: white;
-        }
-
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 56px;
-            align-items: center;
-        }
-
-        .why-us-image {
-            border-radius: var(--radius-xl);
-            background: var(--gradient-primary);
-            aspect-ratio: 4/3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-xl);
-        }
-
-        .why-us-image::before {
-            content: '🦷';
-            font-size: 6rem;
-            opacity: 0.8;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
-        }
-
-        .why-us-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
-        }
-
-        .why-us-content h3 {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-            line-height: 1.25;
-        }
-
-        .why-us-content > p {
-            font-size: 1rem;
-            color: var(--gray);
-            line-height: 1.7;
-            margin-bottom: 28px;
-        }
-
-        .differentiators {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin-bottom: 28px;
-        }
-
-        .differentiators li {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            font-size: 0.95rem;
-            color: var(--dark-secondary);
-            line-height: 1.5;
-        }
-
-        .differentiators li .check-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: rgba(13, 148, 136, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            font-size: 0.85rem;
-            color: var(--primary);
-            margin-top: 1px;
-        }
-
-        .differentiators li strong {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        /* ===== PORTFOLIO ===== */
-        .portfolio {
-            background: var(--bg-light);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            position: relative;
-            aspect-ratio: 4/3;
-            background: var(--gradient-primary);
-            cursor: pointer;
-            transition: all var(--transition-base);
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .portfolio-item:hover {
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
-        }
-
-        .portfolio-item::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity var(--transition-base);
-            pointer-events: none;
-        }
-
-        .portfolio-item:hover::after {
-            opacity: 1;
-        }
-
-        .portfolio-item .portfolio-label {
-            position: absolute;
-            bottom: 16px;
-            left: 16px;
-            right: 16px;
-            color: white;
-            font-weight: 600;
-            font-size: 0.9rem;
-            opacity: 0;
-            transition: all var(--transition-base);
-            z-index: 1;
-            transform: translateY(10px);
-        }
-
-        .portfolio-item:hover .portfolio-label {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .portfolio-item:nth-child(1) {
-            background: linear-gradient(135deg, #0D9488, #0F766E);
-        }
-        .portfolio-item:nth-child(2) {
-            background: linear-gradient(135deg, #06B6D4, #0EA5E9);
-        }
-        .portfolio-item:nth-child(3) {
-            background: linear-gradient(135deg, #0F766E, #134E4A);
-        }
-        .portfolio-item:nth-child(4) {
-            background: linear-gradient(135deg, #14B8A6, #0D9488);
-        }
-        .portfolio-item:nth-child(5) {
-            background: linear-gradient(135deg, #0EA5E9, #0284C7);
-        }
-        .portfolio-item:nth-child(6) {
-            background: linear-gradient(135deg, #134E4A, #0F172A);
-        }
-
-        .portfolio-footer {
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        /* ===== REVIEWS ===== */
-        .reviews {
-            background: white;
-        }
-
-        .reviews-summary {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .reviews-summary .big-rating {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: var(--dark);
-            line-height: 1;
-        }
-
-        .reviews-summary .stars {
-            display: flex;
-            gap: 4px;
-            color: var(--gold);
-            font-size: 1.5rem;
-            letter-spacing: 3px;
-        }
-
-        .reviews-summary .review-count {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .review-card {
-            background: var(--bg-light);
-            border-radius: var(--radius-md);
-            padding: 28px 24px;
-            border: 1px solid #f1f5f9;
-            transition: all var(--transition-base);
-        }
-
-        .review-card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-4px);
-            border-color: #e2e8f0;
-        }
-
-        .review-card .review-stars {
-            color: var(--gold);
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-        }
-
-        .review-card .review-text {
-            font-size: 0.95rem;
-            color: var(--dark-secondary);
-            line-height: 1.6;
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-
-        .review-card .review-author {
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--dark);
-        }
-
-        .review-card .review-date {
-            font-size: 0.8rem;
-            color: var(--light-gray);
-        }
-
-        /* ===== CONTACT / CTA ===== */
-        .contact-section {
-            background: var(--bg-light);
-            padding: 100px 0;
-        }
-
-        .contact-cta {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-cta h3 {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .contact-cta p {
-            font-size: 1.05rem;
-            color: var(--gray);
-            line-height: 1.7;
-            margin-bottom: 28px;
-        }
-
-        /* ===== FINAL CTA ===== */
-        .final-cta {
-            background: var(--gradient-dark);
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(13, 148, 136, 0.3) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .final-cta .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .final-cta h2 {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800;
-            color: white;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .final-cta p {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.75);
-            margin-bottom: 32px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-
-        /* ===== FOOTER ===== */
-        .footer {
-            background: #0a0f1e;
-            color: rgba(255, 255, 255, 0.7);
-            padding: 60px 0 30px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-brand .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: var(--font-display);
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: white;
-            margin-bottom: 12px;
-        }
-
-        .footer-brand .footer-logo .logo-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-
-        .footer-brand .tagline {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .footer-contact p {
-            font-size: 0.85rem;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .footer h4 {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 16px;
-            letter-spacing: 0.03em;
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-links a {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
-            transition: all var(--transition-fast);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(4px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.4);
-        }
-
-        .footer-bottom a {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .footer-bottom a:hover {
-            color: white;
-        }
-
-        /* ===== PRIVACY POLICY ===== */
-        .privacy-page {
-            display: none;
-            min-height: 100vh;
-            background: var(--bg-light);
-            padding: calc(var(--nav-height) + 40px) 0 60px;
-        }
-
-        .privacy-page.visible {
-            display: block;
-            animation: fadeUp 0.5s ease-out;
-        }
-
-        .privacy-page .container {
-            max-width: 800px;
-        }
-
-        .privacy-page h1 {
-            font-family: var(--font-display);
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--dark);
-            margin-bottom: 8px;
-        }
-
-        .privacy-page .last-updated {
-            font-size: 0.85rem;
-            color: var(--gray);
-            margin-bottom: 32px;
-        }
-
-        .privacy-page h2 {
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin: 28px 0 12px;
-        }
-
-        .privacy-page ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .privacy-page ul li {
-            padding: 10px 16px;
-            background: white;
-            border-radius: var(--radius-sm);
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: var(--dark-secondary);
-            line-height: 1.6;
-            border-left: 3px solid var(--primary);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .privacy-page .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 24px;
-            font-weight: 600;
-            color: var(--primary);
-            cursor: pointer;
-        }
-
-        .privacy-page .back-link:hover {
-            color: var(--primary-dark);
-        }
-
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes pulse {
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.6;
-                transform: scale(0.8);
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all var(--transition-slow);
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== BACK TO TOP ===== */
-        .back-to-top {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-lg);
-            z-index: 999;
-            opacity: 0;
-            pointer-events: none;
-            transition: all var(--transition-base);
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .back-to-top:active {
-            transform: translateY(0);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .hero-form-wrapper {
-                max-width: 500px;
-            }
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .why-us-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-            .why-us-image {
-                max-width: 500px;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            :root {
-                --nav-height: 64px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hero {
-                padding: calc(var(--nav-height) + 20px) 0 40px;
-                min-height: auto;
-            }
-
-            .hero h1 {
-                font-size: clamp(2rem, 7vw, 2.8rem);
-            }
-
-            .hero-subheadline {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            .hero-buttons .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .section {
-                padding: 60px 0;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .reviews-summary {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 28px;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .container {
-                padding: 0 16px;
-            }
-
-            .mobile-tray {
-                max-width: 320px;
-                padding: calc(var(--nav-height) + 16px) 20px 24px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-form-card {
-                padding: 24px 18px;
-            }
-            .hero h1 {
-                font-size: 1.9rem;
-            }
-            .section-title {
-                font-size: 1.7rem;
-            }
-            .btn-lg {
-                padding: 14px 24px;
-                font-size: 0.9rem;
-            }
-            .back-to-top {
-                bottom: 16px;
-                right: 16px;
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Flooring Company provides professional flooring supply and installation throughout the Auckland area. Carpet, carpet tiles, vinyl, and floor prep.">
+  <meta name="keywords" content="flooring Auckland, carpet installation, vinyl flooring, floor prep, carpet tiles">
+  <meta property="og:title" content="The Flooring Company | Carpet, Carpet Tiles, Vinyl, Floor Prep">
+  <meta property="og:description" content="Professional flooring supply and installation throughout the Auckland area.">
+  <meta property="og:type" content="website">
+  <title>The Flooring Company | Carpet, Carpet Tiles, Vinyl, Floor Prep | Auckland Wide</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #10069f;
+      --primary-light: #3a2ecc;
+      --primary-dark: #0c0578;
+      --accent: #10069f;
+      --accent-hover: #0c0578;
+      --dark: #222222;
+      --text: #444444;
+      --gray-100: #f7f7f7;
+      --gray-200: #e8e8e8;
+      --gray-300: #d1d5db;
+      --gray-500: #949494;
+      --gray-700: #555555;
+      --white: #ffffff;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px rgba(16,6,159,0.08);
+      --shadow-lg: 0 10px 30px rgba(16,6,159,0.12);
+      --radius: 8px;
+      --radius-lg: 14px;
+      --transition: 0.25s ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all var(--transition);
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16,6,159,0.35);
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--primary);
+      border-color: var(--white);
+    }
+
+    .btn-white:hover {
+      background: var(--gray-100);
+      border-color: var(--gray-100);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--primary);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-lg {
+      padding: 18px 42px;
+      font-size: 1.05rem;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: transparent;
+      transition: all var(--transition);
+    }
+
+    .site-header.scrolled {
+      background: rgba(16, 6, 159, 0.97);
+      box-shadow: 0 4px 20px rgba(16,6,159,0.25);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(20px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--white);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.92rem;
+      font-weight: 500;
+      position: relative;
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--white);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--white);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .header-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--primary);
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: all var(--transition);
+    }
+
+    .header-phone:hover {
+      background: var(--gray-100);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      /* Blue overlay + background image */
+      background:
+        linear-gradient(135deg, rgba(16, 6, 159, 0.90) 0%, rgba(12, 5, 120, 0.88) 55%, rgba(26, 11, 184, 0.85) 100%),
+        url('background.png') center center / cover no-repeat;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 55%),
+        radial-gradient(circle at 15% 85%, rgba(255,255,255,0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 60px 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.32);
+      color: var(--white);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--white);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.18);
+    }
+
+    .hero h1 span {
+      color: #b8b4ff;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 36px;
+      max-width: 540px;
+      text-shadow: 0 1px 12px rgba(0,0,0,0.15);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.20);
+    }
+
+    .hero-stat h3 {
+      font-size: 1.8rem;
+      color: var(--white);
+      font-weight: 800;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .hero-stat p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.80);
+      margin: 0;
+    }
+
+    /* ===== SECTION BASICS ===== */
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-alt {
+      background: var(--gray-100);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 56px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--gray-500);
+      font-size: 1.05rem;
+    }
+
+    /* ===== SERVICES ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(16,6,159,0.25);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--gray-100);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      transition: background var(--transition);
+    }
+
+    .service-card:hover .service-icon {
+      background: rgba(16,6,159,0.09);
+    }
+
+    .service-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--gray-500);
+      font-size: 0.93rem;
+      line-height: 1.6;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3;
+      background: var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-image-placeholder {
+      font-size: 4rem;
+      opacity: 0.3;
+    }
+
+    .about-content h2 {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 20px;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .about-content > p {
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      font-size: 1rem;
+    }
+
+    .about-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .about-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .about-list .check {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--white);
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .about-list strong {
+      display: block;
+      color: var(--dark);
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .about-list p {
+      color: var(--gray-500);
+      font-size: 0.88rem;
+      margin: 0;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: all var(--transition);
+      position: relative;
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+      border-color: rgba(16,6,159,0.25);
+    }
+
+    .testimonial-stars {
+      color: var(--primary);
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card blockquote {
+      color: var(--gray-700);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .testimonial-author h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .testimonial-author p {
+      font-size: 0.8rem;
+      color: var(--gray-500);
+      margin: 0;
+    }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: linear-gradient(135deg, #10069f 0%, #0c0578 100%);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 40%, rgba(255,255,255,0.10) 0%, transparent 60%);
+    }
+
+    .cta-banner .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-banner h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--white);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .cta-banner p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-info > p {
+      color: var(--gray-500);
+      margin-bottom: 32px;
+    }
+
+    .contact-detail {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .contact-detail-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: rgba(16,6,159,0.08);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .contact-detail h4 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gray-500);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .contact-detail a,
+    .contact-detail p {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark);
+      transition: color var(--transition);
+    }
+
+    .contact-detail a:hover {
+      color: var(--primary);
+    }
+
+    .contact-form {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--gray-200);
+    }
+
+    .contact-form h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .contact-form > p {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-bottom: 28px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      margin-bottom: 6px;
+    }
+
+    .form-group label .required {
+      color: #dc2626;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--gray-300);
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: var(--dark);
+      background: var(--white);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      -webkit-appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(16,6,159,0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      font-size: 1rem;
+      margin-top: 4px;
+    }
+
+    .form-message {
+      display: none;
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 16px;
+    }
+
+    .form-message.success {
+      display: block;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .form-message.error {
+      display: block;
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: #0c0578;
+      color: rgba(255,255,255,0.75);
+      padding: 60px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .logo-icon {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col a {
+      font-size: 0.88rem;
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: #10069f;
+        flex-direction: column;
+        padding: 24px 20px 32px;
+        gap: 4px;
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.35s ease;
+        box-shadow: var(--shadow-lg);
+        border-top: 1px solid rgba(255,255,255,0.10);
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 14px 0;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .header-phone {
+        display: none;
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+
+      .hero-stat h3 {
+        font-size: 1.4rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-form {
+        padding: 28px 22px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- ===== STICKY NAVBAR ===== -->
-    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <a href="#home" class="nav-logo" aria-label="Natural Tooth Dental Lab home">
-                <span class="logo-icon">🦷</span>
-                <span class="logo-text">
-                    <span class="en">Natural Tooth</span>
-                    <span class="ar">معمل السن الطبيعي</span>
-                </span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="The Flooring Company home">
+        <span class="logo-icon" aria-hidden="true">TF</span>
+        <span>The Flooring Company</span>
+      </a>
 
-    <!-- ===== MOBILE TRAY OVERLAY ===== -->
-    <div class="mobile-tray-overlay" id="trayOverlay"></div>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#home" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:021791555" class="btn btn-white" style="padding:10px 22px;font-size:0.88rem;margin-top:8px;">Call 021 791 555</a>
+      </nav>
 
-    <!-- ===== MOBILE TRAY ===== -->
-    <div class="mobile-tray" id="mobileTray" role="dialog" aria-label="Mobile navigation menu">
-        <div class="tray-header">
-            <div class="tray-logo">
-                <span class="logo-icon">🦷</span>
-                Natural Tooth
-            </div>
-            <button class="tray-close" id="trayClose" aria-label="Close menu">✕</button>
-        </div>
-        <ul class="tray-links">
-            <li><a href="#home" class="tray-link">Home <span class="tray-arrow">→</span></a></li>
-            <li><a href="#about" class="tray-link">About <span class="tray-arrow">→</span></a></li>
-            <li><a href="#portfolio" class="tray-link">Portfolio <span class="tray-arrow">→</span></a></li>
-            <li><a href="#services" class="tray-link">Services <span class="tray-arrow">→</span></a></li>
-            <li><a href="#reviews" class="tray-link">Reviews <span class="tray-arrow">→</span></a></li>
-            <li><a href="#contact" class="tray-link">Contact <span class="tray-arrow">→</span></a></li>
-        </ul>
-        <div class="tray-footer">
-            <p>📍 Al Rabwah, Abha 62523, Saudi Arabia</p>
-            <p>📞 +966 58 149 5950</p>
-            <p>🕐 Open · Closes 10 PM</p>
-        </div>
+      <a href="tel:021791555" class="header-phone" aria-label="Call us">
+        <span aria-hidden="true">📞</span>
+        <span>021 791 555</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-    <!-- ===== MAIN CONTENT ===== -->
-    <main id="mainContent">
-
-        <!-- HERO SECTION -->
-        <section class="hero" id="home">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-preheadline">
-                        <span class="dot"></span> Dental Laboratory · Abha, Saudi Arabia
-                    </div>
-                    <h1>Precision Dental Restorations, <span class="highlight">Crafted to Perfection</span></h1>
-                    <p class="hero-subheadline">
-                        Natural Tooth Dental Lab delivers world-class crowns, bridges, implants, and digital smile designs
-                        with unmatched precision and artistry. Trusted by leading dentists across the region.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary btn-lg">
-                            Get a Quote <span class="arrow">→</span>
-                        </a>
-                        <a href="#portfolio" class="btn btn-secondary btn-lg">
-                            See Our Work <span class="arrow">→</span>
-                        </a>
-                    </div>
-                    <div class="hero-social-proof">
-                        <div class="stars">★★★★★</div>
-                        <span class="rating-text"><strong>5.0</strong> · 7 Google Reviews</span>
-                        <span class="divider"></span>
-                        <span class="rating-text">Trusted by 100+ Dentists</span>
-                    </div>
-                </div>
-                <div class="hero-form-wrapper">
-                    <div class="hero-form-card" id="heroFormCard">
-                        <div class="form-title">Request a Free Quote</div>
-                        <div class="form-subtitle">We'll respond within 24 hours</div>
-                        <form id="heroContactForm" novalidate>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="heroName">Name</label>
-                                    <input type="text" id="heroName" name="name" placeholder="Your name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="heroEmail">Email</label>
-                                    <input type="email" id="heroEmail" name="email" placeholder="you@email.com" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="heroPhone">Phone</label>
-                                <input type="tel" id="heroPhone" name="phone" placeholder="+966 5X XXX XXXX" required>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="heroProjectType">Project Type</label>
-                                    <select id="heroProjectType" name="projectType" required>
-                                        <option value="">Select type</option>
-                                        <option value="crowns">Crowns & Bridges</option>
-                                        <option value="implants">Dental Implants</option>
-                                        <option value="dentures">Full/Partial Dentures</option>
-                                        <option value="veneers">Veneers</option>
-                                        <option value="digital">Digital Smile Design</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="heroBudget">Budget</label>
-                                    <select id="heroBudget" name="budget" required>
-                                        <option value="">Select budget</option>
-                                        <option value="under2k">Under 2,000 SAR</option>
-                                        <option value="2k-5k">2,000 – 5,000 SAR</option>
-                                        <option value="5k-10k">5,000 – 10,000 SAR</option>
-                                        <option value="10k-20k">10,000 – 20,000 SAR</option>
-                                        <option value="20k+">20,000+ SAR</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="heroTimeline">Timeline</label>
-                                <select id="heroTimeline" name="timeline" required>
-                                    <option value="">Select timeline</option>
-                                    <option value="1week">Within 1 week</option>
-                                    <option value="1-2weeks">1 – 2 weeks</option>
-                                    <option value="2-4weeks">2 – 4 weeks</option>
-                                    <option value="1-3months">1 – 3 months</option>
-                                    <option value="flexible">Flexible</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="heroMessage">Message</label>
-                                <textarea id="heroMessage" name="message" placeholder="Tell us about your project..." rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="form-submit-btn">Send Request →</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SERVICES SECTION -->
-        <section class="section services" id="services">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <span class="section-tag">Our Services</span>
-                    <h2 class="section-title">Dental Lab Services That Exceed Expectations</h2>
-                    <p class="section-description">From single crowns to full-mouth rehabilitations, we combine advanced technology with artisanal craftsmanship.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card animate-on-scroll">
-                        <div class="service-icon">👑</div>
-                        <h3>Crowns & Bridges</h3>
-                        <p>Precision-crafted crowns and bridges using premium zirconia, e.max, and PFM materials. Perfect fit, natural aesthetics, and lasting durability for every patient.</p>
-                        <a href="#contact" class="btn btn-outline btn-sm">Learn More <span class="arrow">→</span></a>
-                    </div>
-                    <div class="service-card animate-on-scroll">
-                        <div class="service-icon">🔩</div>
-                        <h3>Implants & Prosthetics</h3>
-                        <p>Custom implant-supported restorations, abutments, and full-arch prosthetics. We work with all major implant systems for seamless integration.</p>
-                        <a href="#contact" class="btn btn-outline btn-sm">Learn More <span class="arrow">→</span></a>
-                    </div>
-                    <div class="service-card animate-on-scroll">
-                        <div class="service-icon">💻</div>
-                        <h3>Digital Smile Design</h3>
-                        <p>Advanced CAD/CAM technology for digital impressions, 3D-printed models, and virtual smile design. Preview results before treatment begins.</p>
-                        <a href="#contact" class="btn btn-outline btn-sm">Learn More <span class="arrow">→</span></a>
-                    </div>
-                </div>
-                <div class="services-footer animate-on-scroll">
-                    <a href="#contact" class="btn btn-primary">Explore All Services <span class="arrow">→</span></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHY US / ABOUT SECTION -->
-        <section class="section why-us" id="about">
-            <div class="container">
-                <div class="why-us-grid">
-                    <div class="why-us-image animate-on-scroll" aria-label="Dental lab craftsmanship illustration"></div>
-                    <div class="why-us-content animate-on-scroll">
-                        <span class="section-tag">Why Choose Us</span>
-                        <h3>Experience, Quality, and a Design Process Built Around You</h3>
-                        <p>Natural Tooth Dental Lab has been serving dental professionals with distinction. We're not just a lab — we're your partner in delivering exceptional patient outcomes.</p>
-                        <ul class="differentiators">
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span><strong>15+ Years of Experience</strong> — Master technicians with deep expertise in all restoration types.</span>
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span><strong>Uncompromising Quality</strong> — Every case is inspected under magnification for precision and fit.</span>
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span><strong>Collaborative Design Process</strong> — We work closely with your clinic from impression to final delivery.</span>
-                            </li>
-                            <li>
-                                <span class="check-icon">✓</span>
-                                <span><strong>Rapid Turnaround</strong> — Standard cases in 5–7 days; rush service available.</span>
-                            </li>
-                        </ul>
-                        <a href="#reviews" class="btn btn-primary">See What Dentists Say <span class="arrow">→</span></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO SECTION -->
-        <section class="section portfolio" id="portfolio">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <span class="section-tag">Our Work</span>
-                    <h2 class="section-title">Recent Cases & Craftsmanship</h2>
-                    <p class="section-description">A glimpse into the quality and artistry we deliver for dental professionals every day.</p>
-                </div>
-                <div class="portfolio-grid">
-                    <div class="portfolio-item animate-on-scroll">
-                        🦷
-                        <span class="portfolio-label">Zirconia Crown — Anterior</span>
-                    </div>
-                    <div class="portfolio-item animate-on-scroll">
-                        🔩
-                        <span class="portfolio-label">Implant Bridge — Full Arch</span>
-                    </div>
-                    <div class="portfolio-item animate-on-scroll">
-                        ✨
-                        <span class="portfolio-label">e.max Veneers — Smile Design</span>
-                    </div>
-                    <div class="portfolio-item animate-on-scroll">
-                        👑
-                        <span class="portfolio-label">PFM Crown — Posterior</span>
-                    </div>
-                    <div class="portfolio-item animate-on-scroll">
-                        💻
-                        <span class="portfolio-label">Digital Wax-Up & 3D Print</span>
-                    </div>
-                    <div class="portfolio-item animate-on-scroll">
-                        🦷
-                        <span class="portfolio-label">Full Denture Set</span>
-                    </div>
-                </div>
-                <div class="portfolio-footer animate-on-scroll">
-                    <a href="#contact" class="btn btn-primary">Request Portfolio Access <span class="arrow">→</span></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- REVIEWS SECTION -->
-        <section class="section reviews" id="reviews">
-            <div class="container">
-                <div class="section-header animate-on-scroll">
-                    <span class="section-tag">Reviews</span>
-                    <h2 class="section-title">What Our Clients Say</h2>
-                    <p class="section-description">Real feedback from dentists and partners who trust Natural Tooth Dental Lab.</p>
-                </div>
-                <div class="reviews-summary animate-on-scroll">
-                    <span class="big-rating">5.0</span>
-                    <span class="stars">★★★★★</span>
-                    <span class="review-count">Based on 7 Google Reviews</span>
-                </div>
-                <div class="reviews-grid">
-                    <div class="review-card animate-on-scroll">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"What a fantastic workshop and excellent work! The technicians are top-notch."</p>
-                        <p class="review-author">Osama L</p>
-                        <p class="review-date">7 months ago</p>
-                    </div>
-                    <div class="review-card animate-on-scroll">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"It was completed perfectly. Professional service and great communication throughout."</p>
-                        <p class="review-author">Tefa Ebrahem</p>
-                        <p class="review-date">7 months ago</p>
-                    </div>
-                    <div class="review-card animate-on-scroll">
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"Very impressive laboratory. The quality of work speaks for itself. Highly recommend."</p>
-                        <p class="review-author">Aya Tawfeak</p>
-                        <p class="review-date">a week ago</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT CTA SECTION -->
-        <section class="contact-section" id="contact">
-            <div class="container">
-                <div class="contact-cta animate-on-scroll">
-                    <span class="section-tag">Get In Touch</span>
-                    <h3>Ready to Elevate Your Dental Work?</h3>
-                    <p>Reach out today for a free consultation and quote. We're open daily until 10 PM and ready to discuss your next case.</p>
-                    <a href="#home" class="btn btn-primary btn-lg">Contact Us Now <span class="arrow">→</span></a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FINAL CTA -->
-        <section class="final-cta" id="final-cta">
-            <div class="container">
-                <h2>Your Patients Deserve the Best. We Deliver It.</h2>
-                <p>Partner with Natural Tooth Dental Lab and experience the difference that precision, artistry, and reliability make.</p>
-                <a href="#contact" class="btn btn-primary btn-lg">Get a Quote Today <span class="arrow">→</span></a>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer" id="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="logo-icon">🦷</span>
-                        Natural Tooth Dental Lab
-                    </div>
-                    <p class="tagline">معمل السن الطبيعي للاسنان — Precision dental restorations crafted with care in Abha, Saudi Arabia.</p>
-                    <div class="footer-contact">
-                        <p>📍 Al Rabwah, Abha 62523, Saudi Arabia</p>
-                        <p>📞 +966 58 149 5950</p>
-                        <p>✉️ info@naturaltooth.sa</p>
-                        <p>🕐 Open Daily · Closes 10 PM</p>
-                    </div>
-                </div>
-                <div>
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4>Service Area</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Abha</a></li>
-                        <li><a href="#">Khamis Mushait</a></li>
-                        <li><a href="#">Ahad Rafidah</a></li>
-                        <li><a href="#">Asir Region</a></li>
-                        <li><a href="#">Saudi Arabia (Nationwide)</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <span>© 2025 Natural Tooth Dental Lab LLC. All rights reserved.</span>
-                <span>
-                    <a href="#" id="privacyPolicyLink">Privacy Policy</a> ·
-                    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a> ·
-                    <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>
-                </span>
-            </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content fade-up">
+        <span class="hero-badge">⭐ Auckland Wide Service</span>
+        <h1>Premium Flooring <span>Supply & Installation</span> You Can Trust</h1>
+        <p>
+          Professional flooring solutions for residential and commercial spaces across Auckland.
+          From carpet and vinyl to floor prep — we deliver results that look great and last for years.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-white btn-lg">Get a Free Quote</a>
+          <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
         </div>
-    </footer>
-
-    <!-- ===== PRIVACY POLICY PAGE ===== -->
-    <div class="privacy-page" id="privacyPage">
-        <div class="container">
-            <a href="#" class="back-link" id="privacyBackLink">← Back to Home</a>
-            <h1>Privacy Policy</h1>
-            <p class="last-updated">Last updated: September 2025</p>
-
-            <h2>1. Data We Collect</h2>
-            <ul>
-                <li>Name and contact information (email address, phone number) submitted through our contact forms.</li>
-                <li>Project details you voluntarily provide, including project type, budget range, and timeline.</li>
-                <li>Basic website analytics data (pages visited, time on site, browser type) collected via cookies.</li>
-                <li>Communication history if you contact us via phone, email, or social media.</li>
-            </ul>
-
-            <h2>2. Purpose of Data Collection</h2>
-            <ul>
-                <li>To respond to inquiries and provide accurate quotes for dental lab services.</li>
-                <li>To communicate with you about your project status and delivery.</li>
-                <li>To improve our website experience and service offerings based on usage patterns.</li>
-                <li>To comply with legal and regulatory obligations in Saudi Arabia.</li>
-            </ul>
-
-            <h2>3. Data Retention</h2>
-            <ul>
-                <li>Contact form submissions are retained for up to 12 months for follow-up purposes.</li>
-                <li>Customer project records are kept for the duration of the business relationship plus 5 years.</li>
-                <li>Website analytics data is retained for a maximum of 26 months.</li>
-                <li>You may request deletion of your personal data at any time.</li>
-            </ul>
-
-            <h2>4. Third-Party Use</h2>
-            <ul>
-                <li>We do not sell, rent, or trade your personal information to any third party.</li>
-                <li>We may share data with trusted service providers (e.g., hosting, email) solely to operate our business.</li>
-                <li>We may disclose information if required by law or to protect our legal rights.</li>
-                <li>Third-party links on our site (e.g., Instagram, Google Maps) have their own privacy policies.</li>
-            </ul>
-
-            <h2>5. Data Security</h2>
-            <ul>
-                <li>All form submissions are transmitted over encrypted HTTPS connections.</li>
-                <li>Access to personal data is restricted to authorized personnel only.</li>
-                <li>We implement reasonable administrative, technical, and physical safeguards to protect your information.</li>
-                <li>In the unlikely event of a data breach, we will notify affected users within 72 hours.</li>
-            </ul>
-
-            <h2>6. Your Rights</h2>
-            <ul>
-                <li>You have the right to access, correct, or delete your personal data.</li>
-                <li>You may withdraw consent for marketing communications at any time.</li>
-                <li>You can request a copy of the data we hold about you.</li>
-                <li>To exercise any of these rights, contact us at +966 58 149 5950 or info@naturaltooth.sa.</li>
-            </ul>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>16+</h3>
+            <p>Years Experience</p>
+          </div>
+          <div class="hero-stat">
+            <h3>500+</h3>
+            <p>Projects Completed</p>
+          </div>
+          <div class="hero-stat">
+            <h3>100%</h3>
+            <p>Satisfaction Focused</p>
+          </div>
         </div>
+      </div>
     </div>
+  </section>
 
-    <!-- ===== BACK TO TOP ===== -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <!-- ===== SERVICES ===== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">What We Do</span>
+        <h2>Flooring Solutions for Every Space</h2>
+        <p>We supply and install a wide range of flooring options, tailored to your home or business.</p>
+      </div>
 
-    <!-- ===== JAVASCRIPT ===== -->
-    <script>
-        (function() {
-            // === DOM Elements ===
-            const navbar = document.getElementById('navbar');
-            const hamburger = document.getElementById('hamburger');
-            const mobileTray = document.getElementById('mobileTray');
-            const trayOverlay = document.getElementById('trayOverlay');
-            const trayClose = document.getElementById('trayClose');
-            const trayLinks = document.querySelectorAll('.tray-link');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const backToTop = document.getElementById('backToTop');
-            const privacyLink = document.getElementById('privacyPolicyLink');
-            const privacyPage = document.getElementById('privacyPage');
-            const privacyBackLink = document.getElementById('privacyBackLink');
-            const mainContent = document.getElementById('mainContent');
-            const footer = document.getElementById('footer');
-            const heroForm = document.getElementById('heroContactForm');
-            const animateElements = document.querySelectorAll('.animate-on-scroll');
+      <div class="services-grid">
+        <article class="service-card fade-up">
+          <div class="service-icon" aria-hidden="true">🧶</div>
+          <h3>Classic Carpet</h3>
+          <p>Keeping your feet toasty warm and soft underfoot, while providing insulation and sound proofing. Perfect for bedrooms and living areas.</p>
+        </article>
 
-            let isTrayOpen = false;
-            let isPrivacyVisible = false;
+        <article class="service-card fade-up">
+          <div class="service-icon" aria-hidden="true">🔲</div>
+          <h3>Carpet Tiles</h3>
+          <p>Versatile carpet tiles are great for commercial spaces. Especially hardwearing and easy to spot repair as needed.</p>
+        </article>
 
-            // === Navbar Scroll Effect ===
-            function handleScroll() {
-                const scrollY = window.scrollY;
-                if (scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
+        <article class="service-card fade-up">
+          <div class="service-icon" aria-hidden="true">🛠️</div>
+          <h3>Floor Preparation</h3>
+          <p>Preparing your sub-floor is an important step in the installation process. Includes diamond grinding, skim coats, and floor levelling.</p>
+        </article>
 
-                // Back to top visibility
-                if (scrollY > 400) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
+        <article class="service-card fade-up">
+          <div class="service-icon" aria-hidden="true">🏠</div>
+          <h3>Garage Carpet</h3>
+          <p>Transform your garage into a usable, comfortable space with durable garage carpet installation.</p>
+        </article>
 
-                // Active nav link highlighting
-                const sections = ['home', 'about', 'portfolio', 'services', 'reviews', 'contact'];
-                let current = 'home';
-                sections.forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) {
-                        const rect = el.getBoundingClientRect();
-                        if (rect.top <= 120) {
-                            current = id;
-                        }
-                    }
-                });
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + current) {
-                        link.classList.add('active');
-                    }
-                });
-            }
+        <article class="service-card fade-up">
+          <div class="service-icon" aria-hidden="true">🪵</div>
+          <h3>Vinyl Wood Planking</h3>
+          <p>Get the look of timber with the durability and low maintenance of vinyl. Ideal for high-traffic areas.</p>
+        </article>
 
-            window.addEventListener('scroll', handleScroll, { passive: true });
-            handleScroll();
+        <article class="service-card fade-up">
+          <div class="service-icon" aria-hidden="true">🏢</div>
+          <h3>Commercial Flooring</h3>
+          <p>Supply and installation for commercial premises, from offices to retail spaces. Built to withstand heavy use.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-            // === Mobile Tray ===
-            function openTray() {
-                isTrayOpen = true;
-                mobileTray.classList.add('open');
-                trayOverlay.classList.add('active');
-                hamburger.classList.add('active');
-                hamburger.setAttribute('aria-expanded', 'true');
-                document.body.style.overflow = 'hidden';
-            }
+  <!-- ===== ABOUT ===== -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image fade-up">
+          <div class="about-image-placeholder" aria-hidden="true">🏗️</div>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='450'%3E%3Crect fill='%23e8e8e8' width='600' height='450'/%3E%3Ctext x='50%25' y='50%25' fill='%23949494' font-family='sans-serif' font-size='48' text-anchor='middle' dy='.3em'%3EProject Photo%3C/text%3E%3C/svg%3E" alt="The Flooring Company project" style="position:absolute;inset:0;object-fit:cover;">
+        </div>
 
-            function closeTray() {
-                isTrayOpen = false;
-                mobileTray.classList.remove('open');
-                trayOverlay.classList.remove('active');
-                hamburger.classList.remove('active');
-                hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
+        <div class="about-content fade-up">
+          <span class="section-label">About Us</span>
+          <h2>Experienced, Reliable, and Committed to Excellence</h2>
+          <p>
+            Based in Auckland, our experienced team at The Flooring Company is committed to excellence
+            in customer service, achieving outstanding results, and completing projects to the highest standards.
+          </p>
 
-            hamburger.addEventListener('click', () => {
-                if (isTrayOpen) {
-                    closeTray();
-                } else {
-                    openTray();
-                }
+          <ul class="about-list">
+            <li>
+              <span class="check" aria-hidden="true">✓</span>
+              <div>
+                <strong>16+ Years of Industry Experience</strong>
+                <p>Led by Daniel Leggett, who has subcontracted to major flooring partners including Harrison's Carpet One, Flooring Xtra, and Flooring Vision.</p>
+              </div>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">✓</span>
+              <div>
+                <strong>Exceptional Attention to Detail</strong>
+                <p>All installations are completed to the highest standard with exceptional workmanship — so your flooring looks good now and for years to come.</p>
+              </div>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true">✓</span>
+              <div>
+                <strong>Tailored Solutions</strong>
+                <p>Whatever your project, we'll find the right solution for the right price. No job is too big or too small.</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Testimonials</span>
+        <h2>What Our Clients Say</h2>
+        <p>Don't just take our word for it — here's what Auckland homeowners and businesses have to say.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card fade-up">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "Daniel and his team did an incredible job on our new carpet. Professional, punctual, and the finish is flawless. Highly recommend!"
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">SM</div>
+            <div>
+              <h4>Sarah M.</h4>
+              <p>Residential Client, Ponsonby</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card fade-up">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "We had carpet tiles installed across our office. The team was efficient and the result looks fantastic. Great value for money."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">JT</div>
+            <div>
+              <h4>James T.</h4>
+              <p>Commercial Client, CBD</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card fade-up">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            "The floor prep work was exceptional — you can tell they really care about the details. Our vinyl plank flooring looks amazing."
+          </blockquote>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">RL</div>
+            <div>
+              <h4>Rachel L.</h4>
+              <p>Homeowner, Devonport</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="container fade-up">
+      <h2>Ready to Transform Your Space?</h2>
+      <p>Get a free, no-obligation quote for your flooring project today. We'll help you find the perfect solution.</p>
+      <a href="#contact" class="btn btn-white btn-lg">Request Your Free Quote</a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <span class="section-label">Get in Touch</span>
+          <h2>We love new projects. Let's get started!</h2>
+          <p>Whether you have a question or you're ready to book a consultation, we'd love to hear from you.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">👤</div>
+            <div>
+              <h4>Contact Person</h4>
+              <p>Daniel Leggett</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">📞</div>
+            <div>
+              <h4>Mobile</h4>
+              <a href="tel:021791555">021 791 555</a>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">📍</div>
+            <div>
+              <h4>Service Area</h4>
+              <p>Auckland Wide</p>
+            </div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">🕐</div>
+            <div>
+              <h4>Hours</h4>
+              <p>Mon–Sat: 7:00am – 6:00pm</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form fade-up">
+          <h3>Request a Free Quote</h3>
+          <p>Fill in the form below and we'll get back to you within 24 hours.</p>
+
+          <form id="quoteForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="021 123 4567" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="carpet">Classic Carpet</option>
+                <option value="carpet-tiles">Carpet Tiles</option>
+                <option value="floor-prep">Floor Preparation</option>
+                <option value="garage-carpet">Garage Carpet</option>
+                <option value="vinyl">Vinyl Wood Planking</option>
+                <option value="commercial">Commercial Flooring</option>
+                <option value="other">Other / Not Sure</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea id="message" name="message" placeholder="Tell us about your project — approximate size, timeline, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+
+            <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-icon" aria-hidden="true">TF</span>
+            <span>The Flooring Company</span>
+          </a>
+          <p>Professional floor supply and installation throughout the Auckland area. Carpet, carpet tiles, vinyl, and floor prep.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:021791555">021 791 555</a></li>
+            <li><a href="#contact">Get a Free Quote</a></li>
+            <li>Auckland Wide</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> The Flooring Company. All rights reserved.</p>
+        <p>Auckland Wide | Carpet, Carpet Tiles, Vinyl, Floor Prep</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* --- Sticky Header --- */
+      var header = document.getElementById('siteHeader');
+
+      window.addEventListener('scroll', function () {
+        var scrollY = window.scrollY;
+        header.classList.toggle('scrolled', scrollY > 20);
+      }, { passive: true });
+
+      /* --- Mobile Menu --- */
+      var hamburger = document.getElementById('hamburger');
+      var navLinks = document.getElementById('navLinks');
+
+      hamburger.addEventListener('click', function () {
+        var isOpen = navLinks.classList.toggle('open');
+        hamburger.classList.toggle('active', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      /* Close menu when a link is clicked */
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      /* Close menu on Escape */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+          navLinks.classList.remove('open');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+          hamburger.focus();
+        }
+      });
+
+      /* --- Active Nav Link on Scroll --- */
+      var sections = document.querySelectorAll('section[id]');
+      var navAnchors = navLinks.querySelectorAll('a[href^="#"]');
+
+      function updateActiveLink() {
+        var scrollPos = window.scrollY + 120;
+
+        sections.forEach(function (section) {
+          var top = section.offsetTop;
+          var height = section.offsetHeight;
+          var id = section.getAttribute('id');
+
+          if (scrollPos >= top && scrollPos < top + height) {
+            navAnchors.forEach(function (a) {
+              a.classList.toggle('active', a.getAttribute('href') === '#' + id);
             });
+          }
+        });
+      }
 
-            trayClose.addEventListener('click', closeTray);
-            trayOverlay.addEventListener('click', closeTray);
+      window.addEventListener('scroll', updateActiveLink, { passive: true });
 
-            trayLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const href = link.getAttribute('href');
-                    closeTray();
-                    setTimeout(() => {
-                        const target = document.querySelector(href);
-                        if (target) {
-                            target.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }, 350);
-                });
+      /* --- Intersection Observer for Fade-Up Animations --- */
+      var fadeElements = document.querySelectorAll('.fade-up');
+
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
             });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
 
-            // Close tray on Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && isTrayOpen) {
-                    closeTray();
-                }
-            });
+        fadeElements.forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        fadeElements.forEach(function (el) {
+          el.classList.add('visible');
+        });
+      }
 
-            // === Smooth Scroll for Nav Links ===
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const href = link.getAttribute('href');
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
+      /* --- Contact Form Validation --- */
+      var form = document.getElementById('quoteForm');
+      var formMessage = document.getElementById('formMessage');
 
-            // === Intersection Observer for Animations ===
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px',
-            };
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+        var name = form.name.value.trim();
+        var phone = form.phone.value.trim();
+        var email = form.email.value.trim();
 
-            animateElements.forEach(el => {
-                observer.observe(el);
-            });
+        formMessage.className = 'form-message';
+        formMessage.textContent = '';
 
-            // Also observe hero form wrapper for animation
-            const heroFormWrapper = document.querySelector('.hero-form-wrapper');
-            if (heroFormWrapper) {
-                observer.observe(heroFormWrapper);
-            }
+        var errors = [];
 
-            // === Back to Top ===
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
+        if (!name) {
+          errors.push('Please enter your name.');
+        }
 
-            // === Privacy Policy Toggle ===
-            function showPrivacyPolicy() {
-                isPrivacyVisible = true;
-                mainContent.style.display = 'none';
-                footer.style.display = 'none';
-                backToTop.style.display = 'none';
-                privacyPage.classList.add('visible');
-                window.scrollTo({ top: 0, behavior: 'instant' });
-                document.body.style.overflow = '';
-                navbar.style.display = 'none';
-            }
+        if (!phone) {
+          errors.push('Please enter your phone number.');
+        } else if (!/^[\d\s\+\-\(\)]{7,20}$/.test(phone)) {
+          errors.push('Please enter a valid phone number.');
+        }
 
-            function hidePrivacyPolicy() {
-                isPrivacyVisible = false;
-                mainContent.style.display = '';
-                footer.style.display = '';
-                backToTop.style.display = '';
-                privacyPage.classList.remove('visible');
-                navbar.style.display = '';
-                window.scrollTo({ top: 0, behavior: 'instant' });
-            }
+        if (!email) {
+          errors.push('Please enter your email address.');
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          errors.push('Please enter a valid email address.');
+        }
 
-            privacyLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                showPrivacyPolicy();
-            });
+        if (errors.length > 0) {
+          formMessage.className = 'form-message error';
+          formMessage.innerHTML = errors.join('<br>');
+          return;
+        }
 
-            privacyBackLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                hidePrivacyPolicy();
-            });
+        formMessage.className = 'form-message success';
+        formMessage.innerHTML = '✅ Thank you, ' + name + '! We\'ll be in touch within 24 hours.';
 
-            // Handle hash change for privacy policy
-            window.addEventListener('hashchange', () => {
-                if (window.location.hash === '#privacy-policy') {
-                    showPrivacyPolicy();
-                } else if (isPrivacyVisible) {
-                    hidePrivacyPolicy();
-                }
-            });
+        form.reset();
 
-            // Check hash on load
-            if (window.location.hash === '#privacy-policy') {
-                showPrivacyPolicy();
-            }
+        setTimeout(function () {
+          formMessage.className = 'form-message';
+          formMessage.textContent = '';
+        }, 6000);
+      });
 
-            // === Hero Form Submission ===
-            heroForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const submitBtn = heroForm.querySelector('.form-submit-btn');
-                const originalText = submitBtn.textContent;
+      /* --- Current Year in Footer --- */
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-                // Basic validation
-                const name = document.getElementById('heroName').value.trim();
-                const email = document.getElementById('heroEmail').value.trim();
-                const phone = document.getElementById('heroPhone').value.trim();
-                const projectType = document.getElementById('heroProjectType').value;
-                const budget = document.getElementById('heroBudget').value;
-                const timeline = document.getElementById('heroTimeline').value;
+      /* --- Smooth Scroll for Anchor Links (with header offset) --- */
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
 
-                if (!name || !email || !phone || !projectType || !budget || !timeline) {
-                    submitBtn.textContent = '⚠ Please fill all required fields';
-                    submitBtn.style.background = '#FEF3C7';
-                    submitBtn.style.color = '#92400E';
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.style.background = '';
-                        submitBtn.style.color = '';
-                    }, 2500);
-                    return;
-                }
+          var target = document.querySelector(targetId);
+          if (!target) return;
 
-                // Email validation
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    submitBtn.textContent = '⚠ Please enter a valid email';
-                    submitBtn.style.background = '#FEF3C7';
-                    submitBtn.style.color = '#92400E';
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.style.background = '';
-                        submitBtn.style.color = '';
-                    }, 2500);
-                    return;
-                }
+          e.preventDefault();
 
-                // Simulate successful submission
-                submitBtn.textContent = '✓ Request Sent!';
-                submitBtn.style.background = '#D1FAE5';
-                submitBtn.style.color = '#065F46';
-                submitBtn.disabled = true;
+          var headerHeight = header.offsetHeight;
+          var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
 
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.style.color = '';
-                    submitBtn.disabled = false;
-                    heroForm.reset();
-                }, 3000);
-            });
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        });
+      });
 
-            // === Smooth Scroll for All Anchor Links ===
-            document.querySelectorAll('a[href^="#"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    const href = this.getAttribute('href');
-                    if (href === '#privacy-policy' || href === '#') return;
-                    const target = document.querySelector(href);
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
+    })();
+  </script>
 
-            // === Button Micro-interactions with Ripple Effect ===
-            document.querySelectorAll('.btn, .form-submit-btn').forEach(btn => {
-                btn.addEventListener('mousedown', function(e) {
-                    const rect = this.getBoundingClientRect();
-                    const ripple = document.createElement('span');
-                    const size = Math.max(rect.width, rect.height) * 2;
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
-                    ripple.style.cssText = `
-                                position: absolute;
-                                width: ${size}px;
-                                height: ${size}px;
-                                border-radius: 50%;
-                                background: rgba(255,255,255,0.3);
-                                pointer-events: none;
-                                left: ${x}px;
-                                top: ${y}px;
-                                transform: scale(0);
-                                animation: rippleEffect 0.6s ease-out forwards;
-                                z-index: 0;
-                            `;
-                    this.style.position = 'relative';
-                    this.style.overflow = 'hidden';
-                    this.appendChild(ripple);
-                    setTimeout(() => ripple.remove(), 600);
-                });
-            });
-
-            // Add ripple keyframe animation dynamically
-            const rippleStyle = document.createElement('style');
-            rippleStyle.textContent = `
-                        @keyframes rippleEffect {
-                            to { transform: scale(1); opacity: 0; }
-                        }
-                    `;
-            document.head.appendChild(rippleStyle);
-
-            // === Portfolio Item Click Handler ===
-            document.querySelectorAll('.portfolio-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    const label = item.querySelector('.portfolio-label');
-                    if (label) {
-                        const text = label.textContent;
-                        // Simple alert for demo; in production, this would open a lightbox
-                        const toast = document.createElement('div');
-                        toast.textContent = `Viewing: ${text}`;
-                        toast.style.cssText = `
-                                    position: fixed;
-                                    bottom: 30px;
-                                    left: 50%;
-                                    transform: translateX(-50%);
-                                    background: var(--dark);
-                                    color: white;
-                                    padding: 12px 24px;
-                                    border-radius: 50px;
-                                    font-size: 0.9rem;
-                                    font-weight: 500;
-                                    z-index: 9999;
-                                    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-                                    animation: fadeUp 0.3s ease-out;
-                                `;
-                        document.body.appendChild(toast);
-                        setTimeout(() => {
-                            toast.style.opacity = '0';
-                            toast.style.transition = 'opacity 0.3s';
-                            setTimeout(() => toast.remove(), 300);
-                        }, 2000);
-                    }
-                });
-            });
-
-            // === Handle resize for mobile tray ===
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768 && isTrayOpen) {
-                    closeTray();
-                }
-            });
-
-            console.log('🦷 Natural Tooth Dental Lab — Website loaded successfully');
-            console.log('📍 Al Rabwah, Abha 62523, Saudi Arabia');
-            console.log('📞 +966 58 149 5950');
-        })();
-    </script>
 </body>
 </html>
