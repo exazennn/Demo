@@ -19,7 +19,7 @@
   <meta property="og:locale" content="en_NZ">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Favicon (inline SVG, no extra request) -->
+  <!-- Favicon (inline SVG) -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a3c5e'/%3E%3Ctext x='32' y='43' font-family='sans-serif' font-size='28' font-weight='bold' fill='%23e8a838' text-anchor='middle'%3ETF%3C/text%3E%3C/svg%3E">
 
   <!-- Local business structured data -->
@@ -95,7 +95,6 @@
       list-style: none;
     }
 
-    /* Global focus ring for keyboard users */
     :focus-visible {
       outline: 3px solid var(--accent);
       outline-offset: 3px;
@@ -244,8 +243,7 @@
       color: var(--white);
     }
 
-    .nav-links a:not(.btn):hover::after,
-    .nav-links a:not(.btn).active::after {
+    .nav-links a:not(.btn):hover::after {
       width: 100%;
     }
 
@@ -288,41 +286,40 @@
 
     /* ===== HERO ===== */
     .hero {
-      position: relative;
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      padding-top: var(--header-h);
-      overflow: hidden;
-      /* Solid fallback colour + dark scrim so the text is always readable,
-         even if background.png is missing or is a light image. */
-      background-color: #12293f;
-      background-image:
-        linear-gradient(135deg,
-          rgba(15,36,56,0.94) 0%,
-          rgba(26,60,94,0.80) 55%,
-          rgba(15,36,56,0.92) 100%),
-        url('background.png');
-      background-size: cover, cover;
-      background-position: center, center;
-      background-repeat: no-repeat, no-repeat;
+        position: relative;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        padding-top: var(--header-h);
+        overflow: hidden;
+        background-color: #12293f;
+        background-image:
+            linear-gradient(135deg,
+            rgba(15,36,56,0.94) 0%,
+            rgba(26,60,94,0.80) 55%,
+            rgba(15,36,56,0.92) 100%),
+            url('background.png');
+        background-size: cover, cover;
+        background-position: center, center;
+        background-repeat: no-repeat, no-repeat;
     }
 
     .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
         radial-gradient(circle at 80% 20%, rgba(232,168,56,0.12) 0%, transparent 50%),
         radial-gradient(circle at 20% 80%, rgba(255,255,255,0.06) 0%, transparent 50%);
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-      padding: 60px 0;
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    padding: 60px 0;
     }
 
     .hero-badge {
@@ -409,7 +406,7 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #a8700f; /* darker gold for AA contrast on light backgrounds */
+      color: #a8700f;
       margin-bottom: 12px;
     }
 
@@ -915,16 +912,215 @@
       color: rgba(255,255,255,0.45);
     }
 
-    /* ===== ANIMATIONS ===== */
+    /* ===== FADE-UP ENTRANCE ANIMATION ===== */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+                  transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+      will-change: opacity, transform;
     }
 
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Stagger the service cards and testimonials for a nicer reveal */
+    .services-grid .fade-up:nth-child(1) { transition-delay: 0.05s; }
+    .services-grid .fade-up:nth-child(2) { transition-delay: 0.12s; }
+    .services-grid .fade-up:nth-child(3) { transition-delay: 0.19s; }
+    .services-grid .fade-up:nth-child(4) { transition-delay: 0.26s; }
+    .services-grid .fade-up:nth-child(5) { transition-delay: 0.33s; }
+    .services-grid .fade-up:nth-child(6) { transition-delay: 0.40s; }
+
+    .testimonials-grid .fade-up:nth-child(1) { transition-delay: 0.05s; }
+    .testimonials-grid .fade-up:nth-child(2) { transition-delay: 0.15s; }
+    .testimonials-grid .fade-up:nth-child(3) { transition-delay: 0.25s; }
+
+    /* ===== FLOATING ACCESSIBILITY BUTTON ===== */
+    .a11y-toggle {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1200;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--accent);
+      border: 2px solid rgba(232,168,56,0.55);
+      box-shadow: 0 6px 22px rgba(0,0,0,0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .a11y-toggle:hover {
+      transform: translateY(-2px) scale(1.06);
+      background: var(--primary-light);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.32);
+    }
+
+    .a11y-toggle svg {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+
+    .a11y-toggle[aria-expanded="true"] {
+      background: var(--primary-light);
+    }
+
+    /* Small pulsing dot to hint that the button is interactive */
+    .a11y-toggle::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(232,168,56,0.25);
+      animation: a11y-pulse 2.4s ease-in-out infinite;
+    }
+
+    .a11y-toggle.pref-set::after {
+      display: none;
+    }
+
+    @keyframes a11y-pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%      { transform: scale(1.35); opacity: 0.7; }
+    }
+
+    /* ===== ACCESSIBILITY PANEL ===== */
+    .a11y-panel {
+      position: fixed;
+      right: 22px;
+      bottom: 88px;
+      z-index: 1200;
+      width: 272px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      box-shadow: 0 16px 42px rgba(0,0,0,0.18);
+      padding: 18px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+    }
+
+    .a11y-panel.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .a11y-panel h4 {
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gray-500);
+      margin-bottom: 14px;
+    }
+
+    .a11y-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      cursor: pointer;
+      padding: 4px 0;
+    }
+
+    .a11y-row strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--dark);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .a11y-row small {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-top: 2px;
+      line-height: 1.4;
+    }
+
+    /* Toggle switch */
+    .switch {
+      position: relative;
+      flex-shrink: 0;
+      width: 46px;
+      height: 26px;
+      display: inline-block;
+    }
+
+    .switch input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .switch .slider {
+      position: absolute;
+      inset: 0;
+      background: var(--gray-300);
+      border-radius: 999px;
+      transition: background 0.25s ease;
+    }
+
+    .switch .slider::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
+      background: var(--white);
+      border-radius: 50%;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease;
+    }
+
+    .switch input:checked + .slider {
+      background: var(--primary);
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(20px);
+    }
+
+    .switch input:focus-visible + .slider {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* ===== REDUCED MOTION MODE (applied via .reduce-motion on <html>) ===== */
+    html.reduce-motion *,
+    html.reduce-motion *::before,
+    html.reduce-motion *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+
+    html.reduce-motion .fade-up {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    html.reduce-motion {
+      scroll-behavior: auto;
     }
 
     /* ===== RESPONSIVE ===== */
@@ -1016,6 +1212,20 @@
         flex-direction: column;
         text-align: center;
       }
+
+      .a11y-toggle {
+        right: 16px;
+        bottom: 16px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .a11y-panel {
+        right: 16px;
+        left: 16px;
+        width: auto;
+        bottom: 78px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1037,33 +1247,24 @@
       }
     }
 
-    /* ===== REDUCED MOTION ===== */
+    /* ===== FALLBACK FOR NO-JS + OS-LEVEL REDUCED MOTION ===== */
     @media (prefers-reduced-motion: reduce) {
-      html {
+      html:not(.js-ready) .fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      html:not(.js-ready) {
         scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-
-      .fade-up {
-        opacity: 1;
-        transform: none;
       }
     }
   </style>
 
-  <!-- If JavaScript is unavailable, make sure the animated content is still visible -->
+  <!-- If JavaScript is unavailable, still show animated content -->
   <noscript>
     <style>
       .fade-up { opacity: 1 !important; transform: none !important; }
-      .nav-links { position: static; transform: none; opacity: 1; visibility: visible; pointer-events: auto; }
+      .nav-links { position: static !important; transform: none !important; opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; }
     </style>
   </noscript>
 </head>
@@ -1166,17 +1367,7 @@
             <p>Transform your garage into a usable, comfortable space with durable garage carpet installation.</p>
           </article>
 
-          <article class="service-card fade-up">
-            <div class="service-icon" aria-hidden="true">🪵</div>
-            <h3>Vinyl Wood Planking</h3>
-            <p>Get the look of timber with the durability and low maintenance of vinyl. Ideal for high-traffic areas.</p>
-          </article>
-
-          <article class="service-card fade-up">
-            <div class="service-icon" aria-hidden="true">🏢</div>
-            <h3>Commercial Flooring</h3>
-            <p>Supply and installation for commercial premises, from offices to retail spaces. Built to withstand heavy use.</p>
-          </article>
+          
         </div>
       </div>
     </section>
@@ -1431,14 +1622,42 @@
     </div>
   </footer>
 
+  <!-- ===== FLOATING ACCESSIBILITY BUTTON + PANEL ===== -->
+  <button class="a11y-toggle" id="a11yToggle" type="button"
+          aria-label="Accessibility options"
+          aria-expanded="false" aria-controls="a11yPanel"
+          title="Accessibility options">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="4" r="2"/>
+      <path d="M20.5 8.3l-.4-.1c-2.6.5-5.3.8-8.1.8s-5.5-.3-8.1-.8l-.4.1a1 1 0 0 0 .3 2c1.8.4 3.7.6 5.6.7v2.6l-2.2 6.5a1 1 0 1 0 1.9.7L11.5 15h1l2.4 5.8a1 1 0 1 0 1.9-.7l-2.2-6.5V11c1.9-.1 3.8-.3 5.6-.7a1 1 0 0 0 .3-2z"/>
+    </svg>
+  </button>
+
+  <div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Accessibility options">
+    <h4>Accessibility</h4>
+    <label class="a11y-row" for="reduceMotionSwitch">
+      <span>
+        <strong>Reduce animations</strong>
+        <small>Turn off motion &amp; entrance effects</small>
+      </span>
+      <span class="switch">
+        <input type="checkbox" id="reduceMotionSwitch" role="switch"
+               aria-label="Reduce animations">
+        <span class="slider" aria-hidden="true"></span>
+      </span>
+    </label>
+  </div>
+
   <!-- ===== JAVASCRIPT ===== -->
   <script>
     (function () {
       'use strict';
 
+      /* Flag that JS is running so the no-JS fallback media query stops applying */
+      document.documentElement.classList.add('js-ready');
+
       var byId = function (id) { return document.getElementById(id); };
-      var prefersReducedMotion = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var root = document.documentElement;
 
       /* ---------- Sticky Header ---------- */
       var header = byId('siteHeader');
@@ -1474,12 +1693,10 @@
         }
       });
 
-      /* Close menu when a link is tapped */
       navLinks.querySelectorAll('a').forEach(function (link) {
         link.addEventListener('click', closeMenu);
       });
 
-      /* Close menu on Escape */
       document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && navLinks.classList.contains('open')) {
           closeMenu();
@@ -1487,9 +1704,97 @@
         }
       });
 
-      /* Close menu if the viewport is resized back to desktop */
       window.addEventListener('resize', function () {
         if (window.innerWidth > 768) closeMenu();
+      });
+
+      /* ---------- Accessibility: Reduced-Motion Toggle ---------- */
+      var A11Y_KEY = 'tfc-reduce-motion';
+      var a11yToggle = byId('a11yToggle');
+      var a11yPanel = byId('a11yPanel');
+      var reduceMotionSwitch = byId('reduceMotionSwitch');
+
+      function applyMotionPref(reduce) {
+        root.classList.toggle('reduce-motion', reduce);
+        reduceMotionSwitch.checked = reduce;
+
+        if (reduce) {
+          /* Ensure any fade-ups are shown immediately when motion is off */
+          document.querySelectorAll('.fade-up').forEach(function (el) {
+            el.classList.add('visible');
+          });
+        }
+      }
+
+      function readStoredPref() {
+        try {
+          var v = window.localStorage.getItem(A11Y_KEY);
+          return v === null ? null : v === 'true';
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function writeStoredPref(reduce) {
+        try {
+          window.localStorage.setItem(A11Y_KEY, String(reduce));
+        } catch (e) { /* ignore quota / privacy mode errors */ }
+      }
+
+      /* Initial state: user choice > OS preference > default (animations on) */
+      var storedPref = readStoredPref();
+      var osPrefersReduce = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var initialReduce = storedPref !== null ? storedPref : osPrefersReduce;
+      applyMotionPref(initialReduce);
+
+      /* Mark the button if the user has already made an explicit choice */
+      if (storedPref !== null) {
+        a11yToggle.classList.add('pref-set');
+      }
+
+      /* Open / close the panel */
+      function closePanel() {
+        a11yPanel.classList.remove('open');
+        a11yToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      function openPanel() {
+        a11yPanel.classList.add('open');
+        a11yToggle.setAttribute('aria-expanded', 'true');
+      }
+
+      a11yToggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (a11yPanel.classList.contains('open')) {
+          closePanel();
+        } else {
+          openPanel();
+        }
+      });
+
+      /* Close when clicking outside */
+      document.addEventListener('click', function (e) {
+        if (!a11yPanel.contains(e.target) && !a11yToggle.contains(e.target)) {
+          closePanel();
+        }
+      });
+
+      /* Close on Escape */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && a11yPanel.classList.contains('open')) {
+          closePanel();
+          a11yToggle.focus();
+        }
+      });
+
+      /* Toggle handler */
+      reduceMotionSwitch.addEventListener('change', function () {
+        var reduce = reduceMotionSwitch.checked;
+        applyMotionPref(reduce);
+        writeStoredPref(reduce);
+        a11yToggle.classList.add('pref-set');
       });
 
       /* ---------- Active Nav Link on Scroll ---------- */
@@ -1507,7 +1812,6 @@
           }
         });
 
-        /* If we're at the very bottom, highlight the last section */
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 4) {
           currentId = sections[sections.length - 1].id;
         }
@@ -1519,7 +1823,6 @@
         });
       }
 
-      /* Throttle with requestAnimationFrame so we don't thrash the layout */
       var ticking = false;
       window.addEventListener('scroll', function () {
         if (ticking) return;
@@ -1532,10 +1835,10 @@
 
       updateActiveLink();
 
-      /* ---------- Fade-Up Animations ---------- */
+      /* ---------- Fade-Up Entrance Animations ---------- */
       var fadeElements = document.querySelectorAll('.fade-up');
 
-      if ('IntersectionObserver' in window && !prefersReducedMotion) {
+      if ('IntersectionObserver' in window) {
         var observer = new IntersectionObserver(
           function (entries) {
             entries.forEach(function (entry) {
@@ -1550,7 +1853,7 @@
 
         fadeElements.forEach(function (el) { observer.observe(el); });
       } else {
-        /* Fallback for older browsers / reduced motion */
+        /* Older browsers: just show everything */
         fadeElements.forEach(function (el) { el.classList.add('visible'); });
       }
 
@@ -1580,7 +1883,6 @@
         }
       }
 
-      /* Clear the error state as soon as the user starts fixing it */
       [nameInput, phoneInput, emailInput].forEach(function (input) {
         input.addEventListener('input', function () {
           markInvalid(input, false);
@@ -1629,21 +1931,11 @@
           return;
         }
 
-        /* --- In production, POST the data to your backend here, e.g.:
-           fetch('/api/quote', {
-             method: 'POST',
-             headers: { 'Content-Type': 'application/json' },
-             body: JSON.stringify({ name, phone, email, service, message })
-           })
-           .then(function (res) { ... })
-           .catch(function () { ... });
-        --- */
-
+        /* In production, POST to your backend here */
         formMessage.className = 'form-message success';
         formMessage.textContent = 'Thank you, ' + name + '! We\'ll be in touch within 24 hours.';
 
         form.reset();
-
         window.setTimeout(clearMessage, 8000);
       });
 
@@ -1664,12 +1956,13 @@
           var targetPosition = target.getBoundingClientRect().top +
                                window.scrollY - header.offsetHeight;
 
+          var reduce = root.classList.contains('reduce-motion');
+
           window.scrollTo({
             top: Math.max(targetPosition, 0),
-            behavior: prefersReducedMotion ? 'auto' : 'smooth'
+            behavior: reduce ? 'auto' : 'smooth'
           });
 
-          /* Keep the URL in sync without an extra jump */
           if (window.history && window.history.pushState) {
             window.history.pushState(null, '', targetId);
           }
